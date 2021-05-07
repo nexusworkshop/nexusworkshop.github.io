@@ -1,0 +1,13 @@
+.toggle {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggle::before {
+  content: "► ";
+  image-size
+}
+
+.toggle:hover {
+  color: #515151;
+}
