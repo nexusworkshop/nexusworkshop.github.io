@@ -1,0 +1,124 @@
+/* Forest Background */
+body {
+  background-image: url("../images/forest.jpeg");
+  color: #4e2101;
+}
+
+/* Top Background */
+.topback {
+  border-width: 5px;
+  border-style: solid;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding-top: 10px;
+  padding-right: 3%;
+  padding-bottom: 5px;
+  padding-left: 3%;
+  background: rgb(224, 238, 231);
+  /* background: rgba(178, 211, 194, 1); */
+  background-origin: padding-box;
+  background-position: center;
+}
+
+/* Toggles */
+.toggle {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.toggle:hover {
+  color: #515151;
+}
+
+.toggle::before {
+  content: "► ";
+  font-size: 0.45cm;
+}
+
+/* Theory */
+.theory::before {
+  content: "🌱 Theory 🌱";
+  display: inline-block;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Walkthroughs */
+.walkthrough::before {
+  content: "🌿 Walkthroughs 🌿";
+  display: inline-block;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Problems */
+.problems::before {
+  content: "🌲 Problems 🌲";
+  display: inline-block;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Definition Box */
+.definition {
+  border-radius: 10px;
+  border: 2px solid black;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-image: linear-gradient(to right, #c3e7c3, #8fbc8f);
+}
+
+.definition::before {
+  content: "Definition";
+  font-weight: bold;
+}
+
+/* Example Box */
+.example {
+  border-radius: 10px;
+  border: 2px solid black;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-image: linear-gradient(to right, #0ce0fa, #dbf00e);
+}
+
+.exmname::before {
+  content: "Example - ";
+  font-weight: bold;
+  font-size: 0.5cm;
+}
+
+.exmname {
+  font-weight: bold;
+  font-size: 0.5cm;
+}
+
+/* Theorem Box */
+
+.theorem {
+  border-radius: 10px;
+  border: 2px solid black;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-image: linear-gradient(to right, #3ded97, #9ed8f0);
+}
+
+.thmname::before {
+  content: "Theorem - ";
+  font-weight: bold;
+  font-size: 0.5cm;
+}
+
+.thmnam {
+  font-weight: bold;
+  font-size: 0.5cm;
+}
