@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/math/forest.css" />
+    <script src="/math/toggle.js"></script>
+    <!-- MathJax -->
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+        $("#footer").load("/footer.html");
+      });
+    </script>
+    <title>Mass Points</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="topback">
+      <h1>Mass Points</h1>
+      <em
+        >A problem-solving method that is especially useful for geometry
+        questions involving ratios of lengths. Valuable for contests that
+        emphasize speed, like the AMC and MATHCOUNTS, because it can help you
+        save a lot of time. Related to barycentric coordinates and the physics
+        concept of torque.</em
+      >
+      <p>
+        Prerequisites: Basic knowledge of algebra and properties of triangles.
+        Some of the more advanced problems involve the angle bisector theorem,
+        Stewart's Theorem, and Heron's Formula.
+      </p>
+<!-- THEORY -->
+<!-- THEORY -->
+      <div class="theory"></div>
+<!-- What Are Mass Points -->
+      <div class="toggle">What Are Mass Points?</div>
+      <div style="display: none">
+        <div class="definition">
+          <div class="defname">Mass Point</div>
+          We define a <b>mass point</b> to be of the form $aP$ where $a$ is the
+          mass of a point $P$. The mass of any mass point must be positive and
+          real.
+        </div>
+        <p>
+          Note that it is often up to the reader to assign a value for $a$ since
+          math problems generally only provide lengths or ratios of lengths
+          rather than masses.
+        </p>
+        <p>
+          Mass points are most commonly used for triangles, but they can be used
+          for just about any polygon, since all polygons can be decomposed into
+          triangles.
+        </p>
+        <p>
+          The idea of a mass point is based on the physics concept of torque,
+          specifically <em>Archimedes' Law of the Lever</em>. This has to do
+          with rotation and can be visualized as a seesaw, as we will see in the
+          next toggle.
+        </p>
+        <p>
+          Quick notation tip: use lowercase letters for mass values and an
+          uppercase equivalent to denote the corresponding point. This means
+          that "$a$" could be the mass of a point labeled "$A$."
+        </p>
+      </div>
+<!-- Archimides' Law of the Lever and Centers of Mass -->
+      <div class="toggle">Archimedes' Law of the Lever and Centers of Mass</div>
+      <div style="display: none">
+        <p>
+          Now that we know what mass points are, let's take a look at why
+          they're useful! But before we get started, it would be worthwhile to
+          define a few other key terms:
+        </p>
+        <div class="definition">
+          <div class="defname">Archimides' Law of the Lever</div>
+          Magnitudes are in equilibrium at distances reciprocally proportional
+          to their weights.
+        </div>
+        <p>
+          Don't worry if that was confusing. To better understand this, consider
+          the seesaw illustrated below. Different masses are placed on the two
+          ends. In order to keep the seesaw in equilibrium, heavier masses must
+          be placed <b>closer</b> to the fulcrum (the point that the seesaw is
+          resting on) and lighter masses must be placed <b>farther</b> away. The
+          product of each mass and its distance to the fulcrum must be the same.
+        </p>
+        <center>
+          <img
+          src="https://bit.ly/2QTMrH3"
+          alt="Picture of Fulcrum"
+          style="width: 75%"
+        />/>
+        </center>
+        <p>
+          In the above image, Archimedes' Law of the Lever states that
+          $m_1d_1=m_2d_2$.
+        </p>
+        <em
+          >*Note that this is only a sketch and is not to scale. The boxes are
+          there for illustrative purposes and are supposed to represent mass
+          points. In practice, more massive points on the seesaw would not take
+          up more physical space. (After all, all points are technically the
+          same size.) Thus, from a purely mathematical perspective, each
+          distance $d_i$ should be the distance from each mass point to the
+          fulcrum.</em
+        >
+        <div class="definition">
+          <div class="defname">Center of Mass</div>
+          <p>
+            Given a system of objects, the center of mass gives the average
+            location of those objects with respect to each object's mass.
+          </p>
+        </div>
+        <p>
+          Think of it as a "balancing point." (In physics, we often treat large
+          or irregularly shaped objects as having all of their mass located at
+          their center of mass.) For example, if we have a system of two
+          identical mass points, their center of mass will be located right in
+          between them. On the contrary, if one of those points is heavier than
+          the other, the center of mass will be located closer to the heavier
+          point. Note that any set of mass points has a unique center of mass.
+          --- Archimedes' Law of the Lever and the concept of the center of mass
+          help explain the following property of mass points:
+        </p>
+        <div class="theorem">
+          <div class="thmname">Mass Point Addition</div>
+          <p>
+            Using the notation from Definition 1, suppose we have mass points
+            $aP$ and $bQ$. Let their center of mass be point $R$. Then $R$ has a
+            mass of $$a+b.$$ Archimedes' Law of the Lever tells us that
+            $$a(PR)=b(RQ),$$ so $R$ must be located such that
+            $$\frac{a}{b}=\frac{RQ}{PR}.$$
+            <em
+              >Note that mass point addition is both commutative and
+              associative.</em
+            >
+          </p>
+        </div>
+        <p>
+          We can also extend this property to include mass point subtraction. To
+          do this, suppose that we were instead given two mass points $cP$ and
+          $dR$, with $d>c$. We can then subtract them to find the mass of a
+          third point $Q$, located on the other side of $R$ opposite $P$:
+          $$dR-cP = (d-c)Q.$$ In other words, the center of mass of mass points
+          $cP$ and ($d-c)Q$ is $dR$, where $R$ is located in between $P$ and
+          $Q$.
+        </p>
+      </div>
+<!-- Systems of More than Two Mass Points -->
+      <div class="toggle">Systems of More than Two Mass Points</div>
+      <div style="display: none">
+      <p>
+        We just established the idea of balancing a "seesaw" to find the center
+        of mass of two mass points. But what if we've got three or four mass
+        points? Or even more than that? Luckily, the mass points technique can
+        easily be extended to systems of lots of points. For example, most basic
+        mass points problems involve triangles, specifically <em>cevians</em> of
+        triangles:
+      </p>
+        <div class="definition">
+          <div class="defname">The Cevian</div>
+          For a given triangle $ABC$, a <em>cevian</em> is a line segment from
+          one vertex to the opposing side. The term "cevian" is very broad and
+          can include angle bisectors, medians, perpendicular bisectors, etc.
+          (Note that not all perpendicular bisectors are cevians because they
+          don't necessarily go through one of the triangle's vertices.)
+        </div>
+        <p>In the image below, $AD$ is a cevian of $\triangle ABC$.</p>
+        <center>
+          <img
+          src="https://bit.ly/3f250Rk"
+          alt="Picture of Cevian"
+          width="75%"
+        />
+        </center>
+        <p>When solving basic mass points problems, you'll often be given a triangle with a few cevians where you have to find a specific ratio of lengths. To do this, let the intersection of those cevians be the triangle's center of mass. Then you'll be able to treat each cevian as a "seesaw" and assign weights to the triangle's vertices accordingly.</p>
+        </div>
+<!-- Splitting Mass Points -->
+      <div class="toggle">Splitting Mass Points</div>
+      <div style="display: none">
+      <p>
+        Now we know how to assign mass points to triangles with cevians, but what if we're not dealing with cevians? What if we're dealing with lines that still intersect the triangle but don't go through any of its vertices? 
+
+In this case, you're probably wondering about <em>transversals</em>:
+      </p>
+        <div class="definition">
+          <div class="defname">The Transversal</div>
+          A transversal is a line intersecting two distinct lines at two distinct points.
+        </div>
+        <p>In the image below, $DE$ is a transversal because it intersects $AB$ and $AC$ at points $D$ and $E$.</p>
+        <center>
+          <img
+          src="https://bit.ly/3haxSJV"
+          alt="Picture of Transversal"
+          width="75%"
+        />
+        </center>
+        <p>To address these scenarios, use the following property:</p>
+        <div class="theorem">
+        <div class="thmname">Splitting Mass Points</div>
+        Once again suppose we have a triangle $ABC$ and a transversal $DE$, as shown in the diagram below.
+        <center>
+          <img
+          src="https://bit.ly/3uySXSa"
+          alt="Picture of Transversal"
+          width="75%"
+        />
+        </center>
+        <p>Imagine that sides $AB$ and $AC$ are separate "seesaws" with fulcrums at $D$ and $E$. See how point $A$ is suddenly a part of two different seesaws? This means that $A$ will have a split mass.
+
+Pretend that $A$ is made up of two points stuck together: $A_1$ and $A_2$. $A_1$ and $B$ constitute a set of mass points with $D$ as their center of mass, while $A_2$ and $C$ constitute a separate set of mass points with $E$ as their center of mass.
+
+Now suppose that $A_1$ has a mass of $x$ and $A_2$ has a mass of $y$. Now we can just add those two mass points to find the mass of point $A$:
+
+$$xA_1+yA_2=(x+y)A,$$
+
+so the mass of $A$ is just $x+y$.</p>
+      </div>
+        </div>
+
+<!-- Summary and Problem Solving Tips -->
+      <div class="toggle">Summary and Problem Solving Tips</div>
+      <div style="display: none">
+        <p>Mass points problems often start with a diagram and some ratios of lengths. These ratios can help you determine what masses to assign to which points. After that, Archimedes' Law of the Lever can be used to figure out remaining ratios of lengths.</p>
+        <p>When dealing with cevians of a triangle, treat their intersection as the triangle's center of mass and use Archimedes' Law of the Lever on each cevian.</p>
+        <p>Consider assigning masses that are multiples of the given lengths or ratios of lengths to make your calculations easier.</p>
+        <p>When annotating diagrams, it can be useful to circle your mass values on your diagrams to avoid confusing them with lengths. We will do this for the example problems.</p>
+        </div>
+
+<!-- WALKTHROUGHS -->
+<!-- WALKTHROUGHS -->
+<br>
+      <div class="walkthrough"></div>
+
+      <div class="example">
+        <div class="exmname">MyMathcounts AMC 10 Preparation Book V4</div>
+        In $\triangle ABC$, point $D$ is the midpoint of $BC$ and point $E$ lies on $AC$. $AD$ and $BE$ intersect at $G$. If $\dfrac{AC}{CE} = 3$, what is  $\dfrac{AG}{GD}$?
+        <center>
+          <img
+          src="https://bit.ly/3hfrRvl"
+          alt="Example 1 Image"
+          width="75%"
+        />
+        </center>
+        </div>
+
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p><b>Important note:</b> from here on, we'll denote all points with capital letters and their respective masses with their lowercase equivalents.</p>
+        <p> Let $a=1$ for simplicity. We're given that  $\dfrac{AC}{CE}=3$. This means that $\dfrac{AE}{CE}=2$ because $AE+EC=AC$. Using the properties of mass points, we have that 
+
+$$AE\cdot a = EC \cdot c \Rightarrow \frac{AE}{EC}=\frac{c}{a} \Rightarrow c = a\left(\dfrac{AE}{EC}\right)$$
+
+which means that $c=1(2)=2$.</p>
+
+<p>We also know that $D$ is the midpoint of  $BC$, so $\dfrac{BD}{DC}=1$. This means that $b=c$, so $b=2$.
+
+Since $D$ lies between $B$ and $C$ and we already know that $b=c=2$, we have that 
+
+$$d = b+c = 4.$$
+
+We're almost done. We use Archimedes' Law of the Lever one more time:
+
+$$\frac{AG}{GD}=\frac{d}{a}=\frac{4}{1}=\boxed{4}.$$</p>
+<p>A completed diagram with the labeled masses is shown below:</p>
+<center>
+  <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6eeb3c6f-f3de-4f4c-9ca4-0f2b18b02485%2FScreen_Shot_2021-03-17_at_1.48.13_PM.png?table=block&id=1dc61aed-55c4-46d0-8da8-9556a815a772&width=2880&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt="Walkthrough Image"
+          width="75%"
+        />
+</center>
+        </div>
+
+      <div class="example">
+        <div class="exmname">AMC 10B 2013/16</div>
+        In triangle $ABC$, medians $AD$ and $CE$ intersect at $P$, $PE=1.5$, $PD=2$, and $DE=2.5$. What is the area of $AEDC$?
+        <center>
+          <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F81b18978-fdad-48c8-bab1-d821612a1e2d%2FScreen_Shot_2021-03-18_at_11.20.12_AM.png?table=block&id=46d8e683-d835-4fa7-94b9-58de59ef9e20&width=670&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt="Example 1 Image"
+          width="75%"
+        />
+        </center>
+        </div>
+
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p>As with the previous example, we let $a=1$. We know that $AE=EB$ because $CE$ is a median. This means that $b=1$ as well. </p>
+        <p>We follow similar steps to show that $c=1$ because $AD$ is also a median. It follows that
+          $$d=e=1+1=2$$
+
+because of mass point addition.
+        </p>
+        <p>Now we consider the relationship between $AP$ and $PD$. This problem is simple enough that we don't need to compare ratios algebraically, so instead we'll use the seesaw analogy from the theory section. Remember that the mass of each point is inversely proportional to its distance from the fulcrum.</p>
+        <p>Let $P$ be the fulcrum of "seesaws" $AD$ and $CE$. Since $a$ is half the mass of $d$, $a$ must be twice as far away from the fulcrum. This means that $AP=4$ because we're given that $PD=2$.</p>
+        <p>Likewise, we see that $E$ must be half as far away from the fulcrum as $C$ because $E$ has twice the mass of $C$. This means that $CP=3$ because $EP=1.5$.</p>
+        <p>Almost there. Note that $\triangle DPE$ is just a $3-4-5$ right triangle scaled down by one-half, where $\angle DPE = 90^\circ$. This means that the diagonals of $AEDC$ are perpendicular. Therefore, its area is 
+
+$$\frac{AD \cdot CE}{2} = \frac{4.5(6)}{2}=\boxed{13.5}.$$
+
+(The area of $AECD$ can also be found by adding up areas of the four right triangles comprising it.)</p>
+<p>An annotated diagram for this problem is shown below. As with the previous example, the masses are circled.</p>
+<center>
+  <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4358a47e-9ea4-43af-a5ce-15121ca61783%2FScreen_Shot_2021-03-18_at_11.41.16_AM.png?table=block&id=d1c75a0b-abaa-49e8-b714-de54d1078bb8&width=860&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt="Walkthrough Image"
+          width="75%"
+        />
+</center>
+         </div>
+
+        <p>One last example! Don't let the big numbers or the contest name fool you; it's not as complex as it seems.</p>
+
+         <div class="example">
+        <div class="exmname">AIME I 2009/5</div>
+        Triangle $ABC$ has $AC = 450$ and $BC = 300$. Points $K$ and $L$ are located on $\overline{AC}$ and $\overline{AB}$ respectively so that $AK = CK$, and $\overline{CL}$ is the angle bisector of angle $C$. Let $P$ be the point of intersection of $\overline{BK}$ and $\overline{CL}$, and let $M$ be the point on line $BK$ for which $K$ is the midpoint of $\overline{PM}$. If $AM = 180$, find $LP$.
+        <center>
+          <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb46cb50d-6db6-47af-b6c6-01ed9c9cd5f7%2FScreen_Shot_2021-03-18_at_12.04.16_PM.png?table=block&id=25841b6d-4a51-4ba9-a657-7b9afef8b672&width=860&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt="Example 1 Image"
+          width="75%"
+        />
+        </center>
+        </div>
+
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p>We start by labeling our diagram with the given information. We know that $AC=450$ and $K$ is its midpoint, so $AK=CK=225$. We're also given that $CL$ bisects $\angle C$, so we can use the angle bisector theorem on $\triangle ABC$:
+
+$$\frac{BL}{AL}=\frac{BC}{AC}\Rightarrow\frac{BL}{AL}=\frac{300}{450}\Rightarrow 3BL=2AL$$ </p>
+        <p>This suggests that we let $a=2$ and $b=3$ so that our mass point ratios will involve integers. We also have $c=2$ because $AK=CK$.
+        </p>
+        <p>From mass point addition, we see that $k=a+c=4$, $p=k+b=7$, and $l=a+b=5$.</p>
+        <p>Since $L$ has $5/2$ the mass of $C$, it must be $2/5$ as far from $P$. In other words, $LP=\dfrac25 CP$. If we can just find $CP$, we'll be good to go.</p>
+        <p>We're given that $MK=KP$ and $AK=CK$ and we know that vertical angles $AKM$ and $CKP$ are equal, so $\triangle AKM \cong \triangle CKP.$ This means that $AM=CP$. We're given that $AM = 180$. Thus, we have
+
+$$LP=\frac25CP=\frac25(180)=\boxed{72}.$$</p>
+        <p>An annotated diagram for this problem is shown below. The masses are circled.</p>
+<img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F57ba6fe5-16c6-48be-90be-71a3a5effdc5%2FScreen_Shot_2021-03-18_at_12.27.41_PM.png?table=block&id=e285d904-8f3b-4b92-8d3f-7de01582cac5&width=1150&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt="Walkthrough Image"
+          width="75%"
+        />
+         </div>
+<!-- PROBLEMS -->
+<!-- PROBLEMS -->
+      <div class="problems"></div>
+<div class=pts>123432</div>
+      <p>*Instructions*: 
+      <br />
+
+      <h1>Theory</h1>
+
+      <div class="definition">
+        <div class="defname">Name of Definition</div>
+        O
+      </div>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, qui!</p>
+
+      <div class="theorem">
+        <div class="thmname">Name of Theorem</div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora autem
+        velit dolorem quis? Eius accusantium tempora nobis maxime deserunt harum
+        officiis commodi dolores perspiciatis voluptatum ipsa iure, dignissimos
+        dolor vero placeat culpa quas corrupti facere. Deserunt debitis
+        architecto corporis quibusdam aliquam, distinctio nihil fugiat
+        repudiandae ipsam sit! Id, doloremque laudantium!
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, qui!</p>
+      <div class="example">
+        <div class="exmname">Name of Example</div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+        beatae, ratione velit earum suscipit voluptatem voluptate id nobis animi
+        vel molestias alias maiores sed autem debitis voluptates! Eius quae
+        impedit exercitationem possimus corrupti? Saepe, adipisci architecto
+        commodi quo nobis in eveniet doloremque minima. Ipsum laborum voluptates
+        illum aliquid repudiandae totam!
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

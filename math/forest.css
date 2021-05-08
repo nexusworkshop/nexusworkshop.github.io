@@ -1,14 +1,14 @@
 /* Forest Background */
 body {
   background-image: url("../images/forest.jpeg");
-  color: #4e2101;
+  color: #381800;
 }
 
 /* Top Background */
 .topback {
   border-width: 5px;
   border-style: solid;
-  margin-top: 150px;
+  margin-top: 5px;
   margin-bottom: 100px;
   margin-right: 10%;
   margin-left: 10%;
@@ -26,7 +26,9 @@ body {
 .toggle {
   cursor: pointer;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .toggle:hover {
@@ -35,22 +37,22 @@ body {
 
 .toggle::before {
   content: "► ";
-  font-size: 0.45cm;
+  font-size: 0.3cm;
 }
 
 /* Theory */
 .theory::before {
   content: "🌱 Theory 🌱";
   display: inline-block;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: bold;
 }
 
 /* Walkthroughs */
 .walkthrough::before {
-  content: "🌿 Walkthroughs 🌿";
+  content: "🌿 Examples 🌿";
   display: inline-block;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -58,35 +60,45 @@ body {
 .problems::before {
   content: "🌲 Problems 🌲";
   display: inline-block;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: bold;
 }
 
 /* Definition Box */
 .definition {
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2.5px solid #381800;
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
   background-image: linear-gradient(to right, #c3e7c3, #8fbc8f);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.definition::before {
-  content: "Definition";
+.defname::before {
+  content: "Definition - ";
   font-weight: bold;
+  font-size: 0.5cm;
+}
+
+.defname {
+  font-weight: bold;
+  font-size: 0.5cm;
 }
 
 /* Example Box */
 .example {
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2.5px solid #381800;
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
-  background-image: linear-gradient(to right, #0ce0fa, #dbf00e);
+  background-image: linear-gradient(to right, #e1efe7, #99c7d4);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .exmname::before {
@@ -104,12 +116,14 @@ body {
 
 .theorem {
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2.5px solid #381800;
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
-  background-image: linear-gradient(to right, #3ded97, #9ed8f0);
+  background-image: linear-gradient(to right, #ebe7d5, #a3853e);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .thmname::before {
@@ -118,7 +132,23 @@ body {
   font-size: 0.5cm;
 }
 
-.thmnam {
+.thmname {
   font-weight: bold;
   font-size: 0.5cm;
+}
+
+/* Points */
+.pts::before {
+  content: "[🍀";
+  display: inline-block;
+}
+
+.pts::after {
+  content: "pts]";
+  display: inline-block;
+}
+
+.pts {
+  color: green;
+  font-weight: bold;
 }
