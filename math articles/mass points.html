@@ -26,11 +26,12 @@
         },
       };
     </script>
+    <!-- Header and Footer -->
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script>
       $(function () {
-        $("#header").load("/header.html");
-        $("#footer").load("/footer.html");
+        $("#header").load("/mainpages/header.html");
+        $("#footer").load("/mainpages/footer.html");
       });
     </script>
     <title>Mass Points</title>
@@ -368,6 +369,30 @@ $$LP=\frac25CP=\frac25(180)=\boxed{72}.$$</p>
 <!-- PROBLEMS -->
 <!-- PROBLEMS -->
       <div class="problems"></div>
+
+<div class="toggle">
+  <div class=pts>123432</div>
+</div>
+      <div style="display: none">
+        <p>We start by labeling our diagram with the given information. We know that $AC=450$ and $K$ is its midpoint, so $AK=CK=225$. We're also given that $CL$ bisects $\angle C$, so we can use the angle bisector theorem on $\triangle ABC$:
+
+$$\frac{BL}{AL}=\frac{BC}{AC}\Rightarrow\frac{BL}{AL}=\frac{300}{450}\Rightarrow 3BL=2AL$$ </p>
+        <p>This suggests that we let $a=2$ and $b=3$ so that our mass point ratios will involve integers. We also have $c=2$ because $AK=CK$.
+        </p>
+        <p>From mass point addition, we see that $k=a+c=4$, $p=k+b=7$, and $l=a+b=5$.</p>
+        <p>Since $L$ has $5/2$ the mass of $C$, it must be $2/5$ as far from $P$. In other words, $LP=\dfrac25 CP$. If we can just find $CP$, we'll be good to go.</p>
+        <p>We're given that $MK=KP$ and $AK=CK$ and we know that vertical angles $AKM$ and $CKP$ are equal, so $\triangle AKM \cong \triangle CKP.$ This means that $AM=CP$. We're given that $AM = 180$. Thus, we have
+
+$$LP=\frac25CP=\frac25(180)=\boxed{72}.$$</p>
+        <p>An annotated diagram for this problem is shown below. The masses are circled.</p>
+<img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F57ba6fe5-16c6-48be-90be-71a3a5effdc5%2FScreen_Shot_2021-03-18_at_12.27.41_PM.png?table=block&id=e285d904-8f3b-4b92-8d3f-7de01582cac5&width=1150&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt="Walkthrough Image"
+          width="75%"
+        />
+         </div>
+
+
 <div class=pts>123432</div>
       <p>*Instructions*: 
       <br />
@@ -402,5 +427,6 @@ $$LP=\frac25CP=\frac25(180)=\boxed{72}.$$</p>
       </div>
     </div>
     </div>
+    <div id="footer"></div>
   </body>
 </html>

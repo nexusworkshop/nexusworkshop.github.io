@@ -5,6 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/mainpages/aboutus.css" />
+    <!-- Header and Footer -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("/mainpages/header.html");
+        $("#footer").load("/mainpages/footer.html");
+      });
+    </script>
   </head>
-  <body></body>
+  <body>
+    <div id="header"></div>
+    <h2 style="text-align: center">Our Team</h2>
+    <p>
+      <center>
+        Sorry, currently we are not accepting applications for new team members.
+      </center>
+    </p>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2>NAME</h2>
+            <p class="title">Founder, Logistics, Outreach, Content Creator</p>
+            <p>
+              is a high school junior from NJ. She is an AIME qualifier, a
+              school math team captain, and earned a 5 on the 2020 AP Calculus
+              BC exam. She has been a dedicated math participant since 4th
+              grade, and she believes that math is for everyone.
+            </p>
+            <p>
+              Beyond running The Nexus Workshop, she loves to read, play the
+              piano, roller skate, bullet journal, and play ice hockey (among
+              many other things.)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2>NAME</h2>
+            <p class="title">Founder, Full Stack Developer, Content Creator</p>
+            <p>
+              is a high school freshman from NJ. He is an AIME qualifier and has
+              received the AMC 10 Honor Roll and Achievement Roll. His favorite
+              subject is number theory, as he has scored in the top 50 for the
+              Algebra/Number Theory Division 1 Round at CMIMC 2021.
+            </p>
+            <p>
+              Besides being an avid math contest participant, he is also an ice
+              hockey player who took part in the prestigious Quebec
+              International Pee-Wee Hockey Tournament. Some of his other
+              interests include biology and physics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
 </html>

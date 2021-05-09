@@ -8,13 +8,13 @@
 /* Top Gradient - Current Top */
 .topgradient {
   height: 90px;
-  background-color: white; /* For browsers that do not support gradients */
-  background-image: linear-gradient(
-    to right,
-    rgba(204, 255, 51, 0.7),
-    rgba(0, 255, 255, 0.7)
-  );
-  color: black;
+  background-image: url("https://images.pexels.com/photos/957061/milky-way-starry-sky-night-sky-star-957061.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-color: rgb(
+    255,
+    255,
+    255
+  ); /* For browsers that do not support gradients */
+  color: #a5f2f3;
   opacity: 1;
 }
 
@@ -87,4 +87,8 @@
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+body {
+  margin: 0;
 }

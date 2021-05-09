@@ -9,7 +9,7 @@ body {
   border-width: 5px;
   border-style: solid;
   margin-top: 5px;
-  margin-bottom: 100px;
+  margin-bottom: 5px;
   margin-right: 10%;
   margin-left: 10%;
   padding-top: 10px;
@@ -139,16 +139,17 @@ body {
 
 /* Points */
 .pts::before {
-  content: "[🍀";
+  content: "🍀";
   display: inline-block;
 }
 
 .pts::after {
-  content: "pts]";
+  content: " -";
   display: inline-block;
 }
 
 .pts {
   color: green;
   font-weight: bold;
+  display: inline-block;
 }

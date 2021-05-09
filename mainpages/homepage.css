@@ -1,0 +1,87 @@
+/* White Border */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman";
+  font-size: 20px;
+}
+
+.TheNexusWorkshop {
+  font-family: "Marker Felt";
+  font-weight: bold;
+}
+
+body {
+  background-image: url("https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  color: #a5f2f3;
+}
+
+/* Centering Vertically and Horizontally */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  border: 1px solid #a5f2f3;
+  border-radius: 5px;
+  background-color: inherit;
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: #a5f2f3;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* On mouse-over */
+.btn:hover {
+  background: rgb(0, 0, 0);
+}
+
+a {
+  color: #a5f2f3;
+  text-decoration: none;
+}
+
+/* Page Break */
+.space {
+  margin-top: 825px;
+}
+
+.one {
+  border-width: 5px;
+  border-style: solid #89aecf;
+  margin-top: 5px;
+  padding-right: 3%;
+  padding-bottom: 5px;
+  padding-left: 3%;
+  width: 100%;
+  height: auto;
+  background: #131b2f;
+  background-origin: padding-box;
+  background-position: center;
+}
+
+.two {
+  border-width: 5px;
+  border-style: solid black;
+  margin-top: 5px;
+  padding-right: 3%;
+  padding-bottom: 5px;
+  padding-left: 3%;
+  background: rgba(1, 0, 50, 1);
+  background-origin: padding-box;
+  background-position: center;
+}

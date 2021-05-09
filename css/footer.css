@@ -1,0 +1,22 @@
+.footer {
+  border-width: 5px;
+  border-style: solid black;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-right: 3%;
+  padding-bottom: 25px;
+  padding-left: 3%;
+  background: rgb(0, 0, 0);
+  background-origin: padding-box;
+  background-position: center;
+  color: #a5f2f3;
+}
+
+a {
+  color: #a5f2f3;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}

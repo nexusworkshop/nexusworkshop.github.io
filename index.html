@@ -5,6 +5,226 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/mainpages/homepage.css" />
+    <link rel="stylesheet" href="/mainpages/slideshow.css" />
+    <script src="/mainpages/slideshow.js"></script>
+    <!-- Header and Footer -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("/mainpages/header.html");
+        $("#footer").load("/mainpages/footer.html");
+      });
+    </script>
   </head>
-  <body></body>
+
+  <body>
+    <!-- First Page -->
+    <div class="container" style="white-space: nowrap" ;>
+      <span style="line-height: 0%" ;>
+        <center>
+          <img src="/images/Large Logo.png" alt="Logo" width="200" />
+        </center>
+        <div class="TheNexusWorkshop">
+          <p style="font-size: 300%">The Nexus Workshop</p>
+        </div>
+        <p style="font-size: 150%">Spark. Connect. Discover.</p>
+        <br />
+        <p style="font-size: 19px">
+          Free articles for talented math students from around the globe!
+        </p>
+        <br />
+        <button class="btn">
+          <a href="/articles.html">Articles</a>
+        </button>
+        <button class="btn">
+          <a href="/about us.html">About Us</a>
+        </button>
+        <button class="btn">
+          <a href="#">Join Us</a>
+        </button>
+        <button class="btn">
+          <a href="/contact us.html">Contact Us</a>
+        </button>
+        <p></p>
+      </span>
+      <br />
+    </div>
+    <div class="space"></div>
+
+    <!-- Second Page -->
+    <div class="one">
+      <center>
+        <br />
+        <h1>What Makes Nexus Different?</h1>
+      </center>
+      <!-- Slideshow -->
+      <!-- Slideshow container -->
+      <div class="slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 4</div>
+          <img
+            src="https://images.pexels.com/photos/3801516/pexels-photo-3801516.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            style="width: 100%"
+          />
+          <div class="text">
+            <h1 style="font-family: marker felt">Dedicated</h1>
+            <p>
+              Have you ever spent hours pouring over a math concept only for it
+              to remain as undecipherable as hieroglyphics? We've all been
+              there, and that's why we take pride in Nexus' clear step-by-step
+              explanations of every math concept and example problem. We won't
+              skip steps, and we keep prerequisites at a minimum. Each of our
+              articles takes dozens of hours to write before being carefully
+              proofread. We value accuracy, so that's why you should definitely
+              let us know if you find an error.
+            </p>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 4</div>
+          <img
+            src="https://images.pexels.com/photos/258112/pexels-photo-258112.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            style="width: 100%"
+          />
+          <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 4</div>
+          <img
+            src="https://images.pexels.com/photos/1139541/pexels-photo-1139541.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            style="width: 100%"
+          />
+          <div class="text">Caption Three</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 4</div>
+          <img
+            src="https://images.pexels.com/photos/34107/milky-way-stars-night-sky.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            style="width: 100%"
+          />
+          <div class="text">Caption Text</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br />
+
+      <!-- The dots/circles -->
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+
+      <!-- AFTER SLIDESHOW -->
+      <!-- AFTER SLIDESHOW -->
+      <!-- AFTER SLIDESHOW -->
+      <!-- AFTER SLIDESHOW -->
+      <!-- AFTER SLIDESHOW -->
+
+      <!-- Dedication -->
+      <div style="color: white">
+        <center>
+          <b>Dedication</b>
+        </center>
+        <p>
+          Have you ever spent hours pouring over a math concept only for it to
+          remain as undecipherable as hieroglyphics? We've all been there, and
+          that's why we take pride in Nexus' clear step-by-step explanations of
+          every math concept and example problem. We won't skip steps, and we
+          keep prerequisites at a minimum. Each of our articles takes dozens of
+          hours to write before being carefully proofread. We value accuracy, so
+          that's why you should definitely let us know if you find an error.
+        </p>
+      </div>
+      <!-- Accesible -->
+      <div style="color: #e7fbfc">
+        <center>
+          <b>Accesible</b>
+        </center>
+        <p>
+          Nexus was built with learners in mind. This means that we do our
+          absolute best to make our site as informative, accessible, and easy to
+          navigate as possible. All of our articles are broken down into
+          bite-sized pieces. It's even possible for you to learn on the go - if
+          you don't have enough time to read the whole article, just open a
+          single toggle!
+        </p>
+      </div>
+      <!-- Engaging -->
+      <div style="color: #ccf6f7">
+        <center>
+          <b>Engaging</b>
+        </center>
+        <p>
+          We know that spending hours staring at math textbooks comprised of
+          dead tree can be incredibly boring and overwhelming, so our articles
+          aim to fix that. So we've got the solution! We've highlighted and
+          color-coded all the important stuff for you so that you no longer have
+          to worry about picking out details while your brain is being bombarded
+          with information. Our site is both minimalistic and aesthetic, and we
+          hope that the occasional splash of color will help boost learners'
+          motivation.
+        </p>
+      </div>
+      <!-- Welcoming -->
+      <div style="color: #a5f2f3">
+        <center>
+          <b>Welcoming</b>
+        </center>
+        <p>
+          Yes, we know. Every site claims to be home to a special community. But
+          we also know that online communities can easily become toxic. The
+          Nexus team believes that learning math should feel inspiring, not
+          oppressive. That's why we've created a carefully moderated Discord
+          Server for those who join our mailing list. The term "mathletes" was
+          coined for a reason, and we believe that all members of the math
+          community have a responsibility to support each other. Everyone
+          belongs here, no matter your skill level or contest scores.
+        </p>
+      </div>
+      <!-- End DIV (DO NOT DELETE) -->
+    </div>
+
+    <!-- Third Page -->
+    <div class="two">
+      <center>
+        <br />
+        <h1>Mission Statement</h1>
+      </center>
+      <!-- Dedication -->
+      <div style="color: white">
+        <p>Our goal at Nexus is to:</p>
+        <ul>
+          <li>
+            <b>Spark</b> the <b>curiosity</b> of fellow students and legends
+          </li>
+          <li><b>Connect</b> them with a welcoming <b>community</b></li>
+          <li>
+            Allow them to make <b>discoveries</b> that <b>go beyond</b> what's
+            offered in the classroom
+          </li>
+        </ul>
+        <p>
+          We believe that math should revolve around <b>creativity</b>, so our
+          articles aim to expose learners to a variety of unusual topics for
+          them to <b>explore</b> and <b>make connections.</b>
+        </p>
+        <p>
+          Our resources are and always will be at an
+          <b>extremely affordable price</b> because we feel that education
+          should be easily <b>accessible</b> for everyone.
+        </p>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
 </html>
