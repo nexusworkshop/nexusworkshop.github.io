@@ -1,11 +1,11 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Times New Roman;
   margin: 0;
-  background-image: url("https://images.pexels.com/photos/216640/pexels-photo-216640.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-image: url("https://images.pexels.com/photos/733475/pexels-photo-733475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-position: center top;
   background-size: 100% auto;
   background-repeat: repeat-y;
-  color: lightgreen;
+  color: #a5f2f3;
 }
 
 html {
@@ -26,7 +26,7 @@ html {
 }
 
 .card {
-  box-shadow: 0 5px 10px 0 white;
+  box-shadow: 0 5px 10px 0 lightblue;
   margin: 8px;
   padding-top: 20px;
   padding-right: 10px;
@@ -34,15 +34,14 @@ html {
   padding-left: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-right: 20px;
-  margin-left: 20px;
-  background-color: #154e00;
+  margin-right: 70px;
+  margin-left: 70px;
+  background: #141828;
 }
 
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #474e5d;
   color: white;
 }
 
@@ -58,7 +57,7 @@ html {
 }
 
 .title {
-  color: grey;
+  font-style: italic;
 }
 
 .button {
@@ -82,4 +81,9 @@ html {
     width: 100%;
     display: block;
   }
+}
+
+.name {
+  font-size: 25px;
+  font-family: Marker Felt;
 }

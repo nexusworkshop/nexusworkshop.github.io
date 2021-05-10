@@ -3,6 +3,7 @@
   font-size: 30px;
   font-weight: bold;
   display: inline-block;
+  font-family: Marker Felt;
 }
 
 /* Top Gradient - Current Top */
@@ -22,7 +23,7 @@
 .navbar {
   overflow: hidden;
   background-color: #021f4b;
-  font-family: Verdana;
+  font-family: Times New Roman;
 }
 
 /* Links inside the navbar */
