@@ -60,14 +60,12 @@
       <div style="display: none">
         <div class="definition">
           <div class="defname">Mass Point</div>
-          We define a <b>mass point</b> to be of the form $aP$ where $a$ is the
+          <p>A <b>mass point</b> is of the form $aP$ where $a$ is the
           mass of a point $P$. The mass of any mass point must be positive and
-          real.
+          real.</p>
         </div>
         <p>
-          Note that it is often up to the reader to assign a value for $a$ since
-          math problems generally only provide lengths or ratios of lengths
-          rather than masses.
+        Since math problems generally only provide lengths of ratios of lengths, it is often up to the reader to assign a value for $a$.
         </p>
         <p>
           Mass points are most commonly used for triangles, but they can be used
@@ -76,12 +74,12 @@
         </p>
         <p>
           The idea of a mass point is based on the physics concept of torque,
-          specifically <em>Archimedes' Law of the Lever</em>. This has to do
+          specifically Archimedes' Law of the Lever. This has to do
           with rotation and can be visualized as a seesaw, as we will see in the
           next toggle.
         </p>
         <p>
-          Quick notation tip: use lowercase letters for mass values and an
+          Here is a quick notation tip to avoid notation abuse: use lowercase letters for mass values and an
           uppercase equivalent to denote the corresponding point. This means
           that "$a$" could be the mass of a point labeled "$A$."
         </p>
@@ -91,13 +89,12 @@
       <div style="display: none">
         <p>
           Now that we know what mass points are, let's take a look at why
-          they're useful! But before we get started, it would be worthwhile to
-          define a few other key terms:
+          they're useful! But before we get started, it would be worthwhile to understand the motivation behind where mass points come from. Let's take a look at Archimides' Law of the Lever.
         </p>
-        <div class="definition">
-          <div class="defname">Archimides' Law of the Lever</div>
-          Magnitudes are in equilibrium at distances reciprocally proportional
-          to their weights.
+        <div class="theorem">
+          <div class="thmname">Archimides' Law of the Lever</div>
+          <p>Magnitudes are in equilibrium at distances reciprocally proportional
+          to their weights.</p>
         </div>
         <p>
           Don't worry if that was confusing. To better understand this, consider
@@ -111,27 +108,24 @@
           <img
           src="https://bit.ly/2QTMrH3"
           alt="Picture of Fulcrum"
-          style="width: 75%"
-        />/>
+        />
         </center>
         <p>
           In the above image, Archimedes' Law of the Lever states that
           $m_1d_1=m_2d_2$.
         </p>
-        <em
-          >*Note that this is only a sketch and is not to scale. The boxes are
+        <p>As with all of our other diagrams, this is only a sketch and is not to scale. The boxes are
           there for illustrative purposes and are supposed to represent mass
           points. In practice, more massive points on the seesaw would not take
           up more physical space. (After all, all points are technically the
           same size.) Thus, from a purely mathematical perspective, each
           distance $d_i$ should be the distance from each mass point to the
-          fulcrum.</em
-        >
+          fulcrum.</p>
         <div class="definition">
           <div class="defname">Center of Mass</div>
           <p>
-            Given a system of objects, the center of mass gives the average
-            location of those objects with respect to each object's mass.
+            Given a system of objects, the <b>center of mass</b> gives the average
+            location of those objects with respect to each object's mass. Every system of mass points has a unique center of mass.
           </p>
         </div>
         <p>
@@ -141,24 +135,18 @@
           identical mass points, their center of mass will be located right in
           between them. On the contrary, if one of those points is heavier than
           the other, the center of mass will be located closer to the heavier
-          point. Note that any set of mass points has a unique center of mass.
-          --- Archimedes' Law of the Lever and the concept of the center of mass
-          help explain the following property of mass points:
+          point.
         </p>
         <div class="theorem">
           <div class="thmname">Mass Point Addition</div>
-          <p>
-            Using the notation from Definition 1, suppose we have mass points
-            $aP$ and $bQ$. Let their center of mass be point $R$. Then $R$ has a
-            mass of $$a+b.$$ Archimedes' Law of the Lever tells us that
-            $$a(PR)=b(RQ),$$ so $R$ must be located such that
-            $$\frac{a}{b}=\frac{RQ}{PR}.$$
-            <em
-              >Note that mass point addition is both commutative and
-              associative.</em
-            >
+          <p> Supoise we have mass points $aP$ and $bQ$. Let their center of mass be point $R$. Then $R$ has a
+            mass of $a+b.$ 
           </p>
         </div>
+        <p>Archimedes' Law of the Lever tells us that
+            $$a(PR)=b(RQ),$$ so $R$ must be located such that
+            $$\frac{a}{b}=\frac{RQ}{PR}.$$</p>
+        <p>Also, mass point addition is both commutative and associative.</p>
         <p>
           We can also extend this property to include mass point subtraction. To
           do this, suppose that we were instead given two mass points $cP$ and
@@ -177,23 +165,21 @@
         of mass of two mass points. But what if we've got three or four mass
         points? Or even more than that? Luckily, the mass points technique can
         easily be extended to systems of lots of points. For example, most basic
-        mass points problems involve triangles, specifically <em>cevians</em> of
-        triangles:
+        mass points problems involve triangles, specifically cevians:
       </p>
         <div class="definition">
           <div class="defname">The Cevian</div>
-          For a given triangle $ABC$, a <em>cevian</em> is a line segment from
+          <p>For a given triangle $ABC$, a <b>cevian</b> is a line segment from
           one vertex to the opposing side. The term "cevian" is very broad and
           can include angle bisectors, medians, perpendicular bisectors, etc.
           (Note that not all perpendicular bisectors are cevians because they
-          don't necessarily go through one of the triangle's vertices.)
+          don't necessarily go through one of the triangle's vertices.)</p>
         </div>
         <p>In the image below, $AD$ is a cevian of $\triangle ABC$.</p>
         <center>
           <img
           src="https://bit.ly/3f250Rk"
           alt="Picture of Cevian"
-          width="75%"
         />
         </center>
         <p>When solving basic mass points problems, you'll often be given a triangle with a few cevians where you have to find a specific ratio of lengths. To do this, let the intersection of those cevians be the triangle's center of mass. Then you'll be able to treat each cevian as a "seesaw" and assign weights to the triangle's vertices accordingly.</p>
@@ -204,41 +190,24 @@
       <p>
         Now we know how to assign mass points to triangles with cevians, but what if we're not dealing with cevians? What if we're dealing with lines that still intersect the triangle but don't go through any of its vertices? 
 
-In this case, you're probably wondering about <em>transversals</em>:
+In this case, you're probably wondering about transversals:
       </p>
         <div class="definition">
           <div class="defname">The Transversal</div>
-          A transversal is a line intersecting two distinct lines at two distinct points.
+          <p>A <b>transversal</b> is a line intersecting two distinct lines at two distinct points.</p>
         </div>
         <p>In the image below, $DE$ is a transversal because it intersects $AB$ and $AC$ at points $D$ and $E$.</p>
         <center>
           <img
-          src="https://bit.ly/3haxSJV"
-          alt="Picture of Transversal"
-          width="75%"
-        />
-        </center>
-        <p>To address these scenarios, use the following property:</p>
-        <div class="theorem">
-        <div class="thmname">Splitting Mass Points</div>
-        Once again suppose we have a triangle $ABC$ and a transversal $DE$, as shown in the diagram below.
-        <center>
-          <img
           src="https://bit.ly/3uySXSa"
           alt="Picture of Transversal"
-          width="75%"
         />
         </center>
-        <p>Imagine that sides $AB$ and $AC$ are separate "seesaws" with fulcrums at $D$ and $E$. See how point $A$ is suddenly a part of two different seesaws? This means that $A$ will have a split mass.
+        <p>To address these scenarios, use the following method:</p>
+        <p>Imagine that sides $AB$ and $AC$ are separate "seesaws" with fulcrums at $D$ and $E$. See how point $A$ is suddenly a part of two different seesaws? This means that $A$ will have a split mass.</p>
+        <p>Pretend that $A$ is made up of two points stuck together: $A_1$ and $A_2$. $A_1$ and $B$ constitute a set of mass points with $D$ as their center of mass, while $A_2$ and $C$ constitute a separate set of mass points with $E$ as their center of mass.</p>
 
-Pretend that $A$ is made up of two points stuck together: $A_1$ and $A_2$. $A_1$ and $B$ constitute a set of mass points with $D$ as their center of mass, while $A_2$ and $C$ constitute a separate set of mass points with $E$ as their center of mass.
-
-Now suppose that $A_1$ has a mass of $x$ and $A_2$ has a mass of $y$. Now we can just add those two mass points to find the mass of point $A$:
-
-$$xA_1+yA_2=(x+y)A,$$
-
-so the mass of $A$ is just $x+y$.</p>
-      </div>
+        <p>Now suppose that $A_1$ has a mass of $x$ and $A_2$ has a mass of $y$. Now we can just add those two mass points to find the mass of point $A$: $$xA_1+yA_2=(x+y)A,$$ so the mass of $A$ is just $x+y$.</p>
         </div>
 
 <!-- Summary and Problem Solving Tips -->
@@ -262,7 +231,6 @@ so the mass of $A$ is just $x+y$.</p>
           <img
           src="https://bit.ly/3hfrRvl"
           alt="Example 1 Image"
-          width="75%"
         />
         </center>
         </div>
@@ -290,7 +258,6 @@ $$\frac{AG}{GD}=\frac{d}{a}=\frac{4}{1}=\boxed{4}.$$</p>
   <img
           src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6eeb3c6f-f3de-4f4c-9ca4-0f2b18b02485%2FScreen_Shot_2021-03-17_at_1.48.13_PM.png?table=block&id=1dc61aed-55c4-46d0-8da8-9556a815a772&width=2880&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
           alt="Walkthrough Image"
-          width="75%"
         />
 </center>
         </div>
@@ -302,7 +269,6 @@ $$\frac{AG}{GD}=\frac{d}{a}=\frac{4}{1}=\boxed{4}.$$</p>
           <img
           src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F81b18978-fdad-48c8-bab1-d821612a1e2d%2FScreen_Shot_2021-03-18_at_11.20.12_AM.png?table=block&id=46d8e683-d835-4fa7-94b9-58de59ef9e20&width=670&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
           alt="Example 1 Image"
-          width="75%"
         />
         </center>
         </div>
@@ -328,7 +294,6 @@ $$\frac{AD \cdot CE}{2} = \frac{4.5(6)}{2}=\boxed{13.5}.$$
   <img
           src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4358a47e-9ea4-43af-a5ce-15121ca61783%2FScreen_Shot_2021-03-18_at_11.41.16_AM.png?table=block&id=d1c75a0b-abaa-49e8-b714-de54d1078bb8&width=860&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
           alt="Walkthrough Image"
-          width="75%"
         />
 </center>
          </div>
@@ -342,7 +307,6 @@ $$\frac{AD \cdot CE}{2} = \frac{4.5(6)}{2}=\boxed{13.5}.$$
           <img
           src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb46cb50d-6db6-47af-b6c6-01ed9c9cd5f7%2FScreen_Shot_2021-03-18_at_12.04.16_PM.png?table=block&id=25841b6d-4a51-4ba9-a657-7b9afef8b672&width=860&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
           alt="Example 1 Image"
-          width="75%"
         />
         </center>
         </div>
@@ -363,7 +327,6 @@ $$LP=\frac25CP=\frac25(180)=\boxed{72}.$$</p>
 <img
           src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F57ba6fe5-16c6-48be-90be-71a3a5effdc5%2FScreen_Shot_2021-03-18_at_12.27.41_PM.png?table=block&id=e285d904-8f3b-4b92-8d3f-7de01582cac5&width=1150&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
           alt="Walkthrough Image"
-          width="75%"
         />
          </div>
 <!-- PROBLEMS -->
@@ -388,7 +351,6 @@ $$LP=\frac25CP=\frac25(180)=\boxed{72}.$$</p>
 <img
           src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F57ba6fe5-16c6-48be-90be-71a3a5effdc5%2FScreen_Shot_2021-03-18_at_12.27.41_PM.png?table=block&id=e285d904-8f3b-4b92-8d3f-7de01582cac5&width=1150&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
           alt="Walkthrough Image"
-          width="75%"
         />
          </div>
 

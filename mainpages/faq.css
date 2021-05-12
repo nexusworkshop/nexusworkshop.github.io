@@ -9,7 +9,15 @@ body {
 }
 
 .questions {
+  font-family: Marker felt;
+  font-size: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 0.25em;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .answers {
+  padding-left: 10%;
+  padding-right: 10%;
 }

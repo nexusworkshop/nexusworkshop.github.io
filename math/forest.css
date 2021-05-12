@@ -70,11 +70,9 @@ body {
   border: 2.5px solid #381800;
   padding-top: 10px;
   padding-right: 10px;
-  padding-bottom: 10px;
   padding-left: 10px;
+  padding-bottom: 10px;
   background-image: linear-gradient(to right, #c3e7c3, #8fbc8f);
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .defname::before {
@@ -97,8 +95,6 @@ body {
   padding-bottom: 10px;
   padding-left: 10px;
   background-image: linear-gradient(to right, #e1efe7, #99c7d4);
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .exmname::before {
@@ -122,8 +118,6 @@ body {
   padding-bottom: 10px;
   padding-left: 10px;
   background-image: linear-gradient(to right, #ebe7d5, #a3853e);
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .thmname::before {
@@ -137,19 +131,7 @@ body {
   font-size: 0.5cm;
 }
 
-/* Points */
-.pts::before {
-  content: "🍀";
-  display: inline-block;
-}
-
-.pts::after {
-  content: " -";
-  display: inline-block;
-}
-
-.pts {
-  color: green;
-  font-weight: bold;
-  display: inline-block;
+.topback img {
+  width: 50%;
+  margin-top: 1%;
 }
