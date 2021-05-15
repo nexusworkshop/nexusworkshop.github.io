@@ -1,7 +1,6 @@
 body {
   font-family: Times New Roman;
-  margin: 0;
-  background-image: url("https://images.pexels.com/photos/733475/pexels-photo-733475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   background-position: center top;
   background-size: 100% auto;
   background-repeat: repeat-y;
@@ -86,4 +85,10 @@ html {
 .name {
   font-size: 25px;
   font-family: Marker Felt;
+}
+
+.margin {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-style: italic;
 }
