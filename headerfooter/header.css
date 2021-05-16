@@ -80,9 +80,9 @@
   text-align: left;
 }
 
-/* Add a grey background color to dropdown links on hover */
+/* Add a black background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: rgb(0, 0, 0);
 }
 
 /* Show the dropdown menu on hover */
