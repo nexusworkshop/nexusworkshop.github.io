@@ -2,6 +2,7 @@
 body {
   background-image: url("../images/forest.jpeg");
   color: #381800;
+  counter-reset: section;
 }
 
 /* Top Background */
@@ -31,7 +32,7 @@ body {
 }
 
 .toggle:hover {
-  color: #515151;
+  color: #6d3001;
 }
 
 .toggle::before {
@@ -136,9 +137,47 @@ body {
 .topback img {
   width: 40%;
   margin-top: 1%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Heading */
 h1 {
   font-family: Marker Felt;
+}
+
+/* Points */
+.pts {
+  display: inline-block;
+}
+
+.pts::after {
+  display: inline-block;
+  content: "🔥- ";
+}
+
+/* Problem Number */
+.num::before {
+  display: inline-block;
+  counter-increment: section;
+  content: "Problem " counter(section) "";
+}
+
+.num {
+  display: inline-block;
+}
+
+.source::before {
+  display: inline-block;
+  content: "(";
+}
+
+.source {
+  display: inline-block;
+}
+
+.source::after {
+  display: inline-block;
+  content: ")";
 }
