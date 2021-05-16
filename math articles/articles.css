@@ -1,0 +1,115 @@
+body {
+  font-family: Times New Roman;
+  background-image: url("https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  color: #a5f2f3;
+  counter-reset: section;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  font-style: italic;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.name {
+  font-size: 25px;
+  font-family: Marker Felt;
+}
+
+.alcove {
+  background-image: url("https://images.pexels.com/photos/847402/pexels-photo-847402.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+  background-size: 100% 100%;
+}
+
+.coastline {
+  background-image: url("https://images.pexels.com/photos/2457183/pexels-photo-2457183.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+  background-size: 100% 100%;
+}
+
+.glade {
+  background-image: url("https://images.pexels.com/photos/1671324/pexels-photo-1671324.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-size: 100% 100%;
+}
+
+.tundra {
+  background-image: url("https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+  background-size: 100% 100%;
+}
+
+.numberalcove::before {
+  counter-increment: section;
+  content: "Alcove Article " counter(section) ": ";
+}
+
+.numbercoastline::before {
+  counter-increment: section;
+  content: "Coastline Article " counter(section) ": ";
+}
+
+.numberglade::before {
+  counter-increment: section;
+  content: "Glade Article " counter(section) ": ";
+}
+
+.numbertundra::before {
+  counter-increment: section;
+  content: "Tundra Article " counter(section) ": ";
+}
