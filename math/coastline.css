@@ -1,0 +1,184 @@
+/* Forest Background */
+body {
+    background-image: url("https://images.pexels.com/photos/6775295/pexels-photo-6775295.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+    color: #50310b;
+    counter-reset: section;
+  }
+  
+  /* Top Background */
+  .topback {
+    border-width: 3px;
+    border-style: solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding-top: 10px;
+    padding-right: 3%;
+    padding-bottom: 5px;
+    padding-left: 3%;
+    background: #F1EBDA;
+    background-origin: padding-box;
+    background-position: center;
+  }
+  
+  /* Toggles */
+  .toggle {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .toggle:hover {
+    color: #035474;
+  }
+  
+  .toggle::before {
+    content: "► ";
+    font-size: 0.3cm;
+  }
+  
+  /* Theory */
+  .theory::before {
+    content: "🏝 Theory 🏝";
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Marker felt;
+  }
+  
+  /* Walkthroughs */
+  .walkthrough::before {
+    content: "🐚 Examples 🐚";
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Marker felt;
+  }
+  
+  /* Problems */
+  .problems::before {
+    content: "🐬 Problems 🐬";
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Marker felt;
+  }
+  
+  /* Definition Box */
+  .definition {
+    border-radius: 10px;
+    border: 2.5px solid #002405;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    background-image: linear-gradient(to right, #c9f896f8, #59f8e8fa);
+  }
+  
+  .defname::before {
+    content: "Definition - ";
+    font-weight: bold;
+    font-size: 0.5cm;
+  }
+  
+  .defname {
+    font-weight: bold;
+    font-size: 0.5cm;
+  }
+  
+  /* Example Box */
+  .example {
+    border-radius: 10px;
+    border: 2.5px solid #002405;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-image: linear-gradient(to right, #b7fcf5, #ffc1ca);
+  }
+  
+  .exmname::before {
+    content: "Example - ";
+    font-weight: bold;
+    font-size: 0.5cm;
+  }
+  
+  .exmname {
+    font-weight: bold;
+    font-size: 0.5cm;
+  }
+  
+  /* Theorem Box */
+  
+  .theorem {
+    border-radius: 10px;
+    border: 2.5px solid #002405;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-image: linear-gradient(to right, #FFE5B4, #B0FF5C);
+  }
+  
+  .thmname::before {
+    content: "Theorem - ";
+    font-weight: bold;
+    font-size: 0.5cm;
+  }
+  
+  .thmname {
+    font-weight: bold;
+    font-size: 0.5cm;
+  }
+  
+  .topback img {
+    width: 40%;
+    margin-top: 1%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Heading */
+  h1 {
+    font-family: Marker Felt;
+  }
+  
+  /* Points */
+  .pts {
+    display: inline-block;
+  }
+  
+  .pts::after {
+    display: inline-block;
+    content: "🔥- ";
+  }
+  
+  /* Problem Number */
+  .num::before {
+    display: inline-block;
+    counter-increment: section;
+    content: "Problem " counter(section) "";
+  }
+  
+  .num {
+    display: inline-block;
+  }
+  
+  .source::before {
+    display: inline-block;
+    content: "(";
+  }
+  
+  .source {
+    display: inline-block;
+  }
+  
+  .source::after {
+    display: inline-block;
+    content: ")";
+  }
+  
