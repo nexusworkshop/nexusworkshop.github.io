@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/math/alcove.css" />
+    <script src="/math/toggle.js"></script>
+    <!-- MathJax -->
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <!-- Header and Footer -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/headerfooter/headerfooter.js"></script>
+    <title>Logarithms</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="topback">
+      <h1>Logarithms</h1>
+      <em
+        >The inverse of exponentiation. Logarithm problems range in difficulty
+        from the mundane to the extreme but appear nearly every year on the AMC
+        12 and AIME.</em
+      >
+      <p>
+        Prerequisites: This article will be most useful to those who are looking
+        to extend their knowledge to more difficult contest math problems. Those
+        who have no experience with logarithms should consider finding
+        additional practice until they are comfortable with the properties
+        described in the theory section.
+      </p>
+      <!-- THEORY -->
+      <!-- THEORY -->
+      <div class="theory"></div>
+      <!-- What Are Mass Points -->
+      <div class="toggle">What Are Logarithms?</div>
+      <div style="display: none">
+        <p>
+          Suppose we wish to isolate $x$ in the equation $a^x=b$. How would we
+          do this?
+        </p>
+        <p>Here's where logarithms come into play.</p>
+        <div class="definition">
+          <div class="defname">Logarithm</div>
+          <p>
+            Given any number $a>0$ and $a\neq 1$, $$\log_ab=x
+            \Longleftrightarrow a^x=b.$$ We refer to $x$ as the exponent, $a$ as
+            the base, and $b$ as the argument.
+          </p>
+        </div>
+        <p>
+          For example $\log_216=4$ because $2^4=16$. Similarly, we also have
+          $\log_5(\frac{1}{25})=-2$, and $\log_{\frac{1}{2}}(\frac{1}{8})=3$.
+        </p>
+        <p>
+          Note that $a^x=b$ is referred to as exponential form while $x=\log_ab$
+          is referred to as logarithmic form.
+        </p>
+        <p></p>
+        <p>
+          Unless stated otherwise, if a logarithm does not include a base,
+          assume the base is 10. If the logarithm is written as "ln" instead of
+          "log," assume the base is $e$.
+        </p>
+        <p>
+          Now that we've got a grasp on the basics, let's take a look at some
+          fundamental rules. From now on, assume that all variables are positive
+          for the rest of the theory section.
+        </p>
+        <!-- Blowfish -->
+      </div>
+      <!-- Archimides' Law of the Lever and Centers of Mass -->
+      <div class="toggle">Archimedes' Law of the Lever and Centers of Mass</div>
+      <div style="display: none">
+        <p>
+          Now that we know what mass points are, let's take a look at why
+          they're useful! But before we get started, it would be worthwhile to
+          understand the motivation behind where mass points come from. Let's
+          take a look at Archimedes' Law of the Lever.
+        </p>
+        <div class="theorem">
+          <div class="thmname">Archimedes' Law of the Lever</div>
+          <p>
+            Magnitudes are in equilibrium at distances reciprocally proportional
+            to their weights.
+          </p>
+        </div>
+        <p>
+          Don't worry if that was confusing. To better understand this, consider
+          the seesaw illustrated below. Different masses are placed on the two
+          ends. In order to keep the seesaw in equilibrium, heavier masses must
+          be placed <b>closer</b> to the fulcrum (the point that the seesaw is
+          resting on) and lighter masses must be placed <b>farther</b> away. The
+          product of each mass and its distance to the fulcrum must be the same.
+        </p>
+        <center>
+          <img src="https://bit.ly/2QTMrH3" alt="Picture of Fulcrum" />
+        </center>
+        <p>
+          In the above image, Archimedes' Law of the Lever states that
+          $m_1d_1=m_2d_2$.
+        </p>
+        <p>
+          As with all of our other diagrams, this is only a sketch and is not to
+          scale. The boxes are there for illustrative purposes and are supposed
+          to represent mass points. In practice, more massive points on the
+          seesaw would not take up more physical space. (After all, all points
+          are technically the same size.) Thus, from a purely mathematical
+          perspective, each distance $d_i$ should be the distance from each mass
+          point to the fulcrum.
+        </p>
+        <div class="definition">
+          <div class="defname">Center of Mass</div>
+          <p>
+            Given a system of objects, the <b>center of mass</b> gives the
+            average location of those objects with respect to each object's
+            mass. Every system of mass points has a unique center of mass.
+          </p>
+        </div>
+        <p>
+          Think of it as a "balancing point." (In physics, we often treat large
+          or irregularly shaped objects as having all of their mass located at
+          their center of mass.) For example, if we have a system of two
+          identical mass points, their center of mass will be located right in
+          between them. On the contrary, if one of those points is heavier than
+          the other, the center of mass will be located closer to the heavier
+          point.
+        </p>
+        <div class="theorem">
+          <div class="thmname">Mass Point Addition</div>
+          <p>
+            Supoise we have mass points $aP$ and $bQ$. Let their center of mass
+            be point $R$. Then $R$ has a mass of $a+b.$
+          </p>
+        </div>
+        <p>
+          Archimedes' Law of the Lever tells us that $$a(PR)=b(RQ),$$ so $R$
+          must be located such that $$\frac{a}{b}=\frac{RQ}{PR}.$$
+        </p>
+        <p>Also, mass point addition is both commutative and associative.</p>
+        <p>
+          We can also extend this property to include mass point subtraction. To
+          do this, suppose that we were instead given two mass points $cP$ and
+          $dR$, with $d>c$. We can then subtract them to find the mass of a
+          third point $Q$, located on the other side of $R$ opposite $P$:
+          $$dR-cP = (d-c)Q.$$ In other words, the center of mass of mass points
+          $cP$ and ($d-c)Q$ is $dR$, where $R$ is located in between $P$ and
+          $Q$.
+        </p>
+      </div>
+      <!-- Systems of More than Two Mass Points -->
+      <div class="toggle">Systems of More than Two Mass Points</div>
+      <div style="display: none">
+        <p>
+          We just established the idea of balancing a "seesaw" to find the
+          center of mass of two mass points. But what if we've got three or four
+          mass points? Or even more than that? Luckily, the mass points
+          technique can easily be extended to systems of lots of points. For
+          example, most basic mass points problems involve triangles,
+          specifically cevians:
+        </p>
+        <div class="definition">
+          <div class="defname">The Cevian</div>
+          <p>
+            For a given triangle $ABC$, a <b>cevian</b> is a line segment from
+            one vertex to the opposing side. The term "cevian" is very broad and
+            can include angle bisectors, medians, perpendicular bisectors, etc.
+            (Note that not all perpendicular bisectors are cevians because they
+            don't necessarily go through one of the triangle's vertices.)
+          </p>
+        </div>
+        <p>In the image below, $AD$ is a cevian of $\triangle ABC$.</p>
+        <center>
+          <img src="https://bit.ly/3f250Rk" alt="Picture of Cevian" />
+        </center>
+        <p>
+          When solving basic mass points problems, you'll often be given a
+          triangle with a few cevians where you have to find a specific ratio of
+          lengths. To do this, let the intersection of those cevians be the
+          triangle's center of mass. Then you'll be able to treat each cevian as
+          a "seesaw" and assign weights to the triangle's vertices accordingly.
+        </p>
+      </div>
+      <!-- Splitting Mass Points -->
+      <div class="toggle">Splitting Mass Points</div>
+      <div style="display: none">
+        <p>
+          Now we know how to assign mass points to triangles with cevians, but
+          what if we're not dealing with cevians? What if we're dealing with
+          lines that still intersect the triangle but don't go through any of
+          its vertices? In this case, you're probably wondering about
+          transversals:
+        </p>
+        <div class="definition">
+          <div class="defname">The Transversal</div>
+          <p>
+            A <b>transversal</b> is a line intersecting two distinct lines at
+            two distinct points.
+          </p>
+        </div>
+        <p>
+          In the image below, $DE$ is a transversal because it intersects $AB$
+          and $AC$ at points $D$ and $E$.
+        </p>
+        <center>
+          <img src="https://bit.ly/3uySXSa" alt="Picture of Transversal" />
+        </center>
+        <p>To address these scenarios, use the following method:</p>
+        <p>
+          Imagine that sides $AB$ and $AC$ are separate "seesaws" with fulcrums
+          at $D$ and $E$. See how point $A$ is suddenly a part of two different
+          seesaws? This means that $A$ will have a split mass.
+        </p>
+        <p>
+          Pretend that $A$ is made up of two points stuck together: $A_1$ and
+          $A_2$. $A_1$ and $B$ constitute a set of mass points with $D$ as their
+          center of mass, while $A_2$ and $C$ constitute a separate set of mass
+          points with $E$ as their center of mass.
+        </p>
+
+        <p>
+          Now suppose that $A_1$ has a mass of $x$ and $A_2$ has a mass of $y$.
+          Now we can just add those two mass points to find the mass of point
+          $A$: $$xA_1+yA_2=(x+y)A,$$ so the mass of $A$ is just $x+y$.
+        </p>
+      </div>
+
+      <!-- Summary and Problem Solving Tips -->
+      <div class="toggle">Summary and Problem Solving Tips</div>
+      <div style="display: none">
+        <p>
+          Mass points problems often start with a diagram and some ratios of
+          lengths. These ratios can help you determine what masses to assign to
+          which points. After that, Archimedes' Law of the Lever can be used to
+          figure out remaining ratios of lengths.
+        </p>
+        <p>
+          When dealing with cevians of a triangle, treat their intersection as
+          the triangle's center of mass and use Archimedes' Law of the Lever on
+          each cevian.
+        </p>
+        <p>
+          Consider assigning masses that are multiples of the given lengths or
+          ratios of lengths to make your calculations easier.
+        </p>
+        <p>
+          When annotating diagrams, it can be useful to circle your mass values
+          on your diagrams to avoid confusing them with lengths. We will do this
+          for the example problems.
+        </p>
+      </div>
+
+      <!-- WALKTHROUGHS -->
+      <!-- WALKTHROUGHS -->
+      <br />
+      <div class="walkthrough"></div>
+
+      <div class="example">
+        <div class="exmname">MyMathcounts AMC 10 Preparation Book V4</div>
+        In $\triangle ABC$, point $D$ is the midpoint of $BC$ and point $E$ lies
+        on $AC$. $AD$ and $BE$ intersect at $G$. If $\dfrac{AC}{CE} = 3$, what
+        is $\dfrac{AG}{GD}$?
+        <center>
+          <img src="https://bit.ly/3hfrRvl" alt="Example 1 Image" />
+        </center>
+      </div>
+
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p>
+          <b>Important note:</b> from here on, we'll denote all points with
+          capital letters and their respective masses with their lowercase
+          equivalents.
+        </p>
+        <p>
+          Let $a=1$ for simplicity. We're given that $\dfrac{AC}{CE}=3$. This
+          means that $\dfrac{AE}{CE}=2$ because $AE+EC=AC$. Using the properties
+          of mass points, we have that $$AE\cdot a = EC \cdot c \Rightarrow
+          \frac{AE}{EC}=\frac{c}{a} \Rightarrow c =
+          a\left(\dfrac{AE}{EC}\right)$$ which means that $c=1(2)=2$.
+        </p>
+
+        <p>
+          We also know that $D$ is the midpoint of $BC$, so $\dfrac{BD}{DC}=1$.
+          This means that $b=c$, so $b=2$. Since $D$ lies between $B$ and $C$
+          and we already know that $b=c=2$, we have that $$d = b+c = 4.$$ We're
+          almost done. We use Archimedes' Law of the Lever one more time:
+          $$\frac{AG}{GD}=\frac{d}{a}=\frac{4}{1}=\boxed{4}.$$
+        </p>
+        <p>A completed diagram with the labeled masses is shown below:</p>
+        <center>
+          <img
+            src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6eeb3c6f-f3de-4f4c-9ca4-0f2b18b02485%2FScreen_Shot_2021-03-17_at_1.48.13_PM.png?table=block&id=1dc61aed-55c4-46d0-8da8-9556a815a772&width=2880&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+            alt="Walkthrough Image"
+          />
+        </center>
+      </div>
+
+      <div class="example">
+        <div class="exmname">AMC 10B 2013/16</div>
+        In triangle $ABC$, medians $AD$ and $CE$ intersect at $P$, $PE=1.5$,
+        $PD=2$, and $DE=2.5$. What is the area of $AEDC$?
+        <center>
+          <img
+            src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F81b18978-fdad-48c8-bab1-d821612a1e2d%2FScreen_Shot_2021-03-18_at_11.20.12_AM.png?table=block&id=46d8e683-d835-4fa7-94b9-58de59ef9e20&width=670&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+            alt="Example 1 Image"
+          />
+        </center>
+      </div>
+
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p>
+          As with the previous example, we let $a=1$. We know that $AE=EB$
+          because $CE$ is a median. This means that $b=1$ as well.
+        </p>
+        <p>
+          We follow similar steps to show that $c=1$ because $AD$ is also a
+          median. It follows that $$d=e=1+1=2$$ because of mass point addition.
+        </p>
+        <p>
+          Now we consider the relationship between $AP$ and $PD$. This problem
+          is simple enough that we don't need to compare ratios algebraically,
+          so instead we'll use the seesaw analogy from the theory section.
+          Remember that the mass of each point is inversely proportional to its
+          distance from the fulcrum.
+        </p>
+        <p>
+          Let $P$ be the fulcrum of "seesaws" $AD$ and $CE$. Since $a$ is half
+          the mass of $d$, $a$ must be twice as far away from the fulcrum. This
+          means that $AP=4$ because we're given that $PD=2$.
+        </p>
+        <p>
+          Likewise, we see that $E$ must be half as far away from the fulcrum as
+          $C$ because $E$ has twice the mass of $C$. This means that $CP=3$
+          because $EP=1.5$.
+        </p>
+        <p>
+          Almost there. Note that $\triangle DPE$ is just a $3-4-5$ right
+          triangle scaled down by one-half, where $\angle DPE = 90^\circ$. This
+          means that the diagonals of $AEDC$ are perpendicular. Therefore, its
+          area is $$\frac{AD \cdot CE}{2} = \frac{4.5(6)}{2}=\boxed{13.5}.$$
+          (The area of $AECD$ can also be found by adding up areas of the four
+          right triangles comprising it.)
+        </p>
+        <p>
+          An annotated diagram for this problem is shown below. As with the
+          previous example, the masses are circled.
+        </p>
+        <center>
+          <img
+            src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4358a47e-9ea4-43af-a5ce-15121ca61783%2FScreen_Shot_2021-03-18_at_11.41.16_AM.png?table=block&id=d1c75a0b-abaa-49e8-b714-de54d1078bb8&width=860&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+            alt="Walkthrough Image"
+          />
+        </center>
+      </div>
+
+      <p>
+        One last example! Don't let the big numbers or the contest name fool
+        you; it's not as complex as it seems.
+      </p>
+
+      <div class="example">
+        <div class="exmname">AIME I 2009/5</div>
+        Triangle $ABC$ has $AC = 450$ and $BC = 300$. Points $K$ and $L$ are
+        located on $\overline{AC}$ and $\overline{AB}$ respectively so that $AK
+        = CK$, and $\overline{CL}$ is the angle bisector of angle $C$. Let $P$
+        be the point of intersection of $\overline{BK}$ and $\overline{CL}$, and
+        let $M$ be the point on line $BK$ for which $K$ is the midpoint of
+        $\overline{PM}$. If $AM = 180$, find $LP$.
+        <center>
+          <img
+            src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb46cb50d-6db6-47af-b6c6-01ed9c9cd5f7%2FScreen_Shot_2021-03-18_at_12.04.16_PM.png?table=block&id=25841b6d-4a51-4ba9-a657-7b9afef8b672&width=860&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+            alt="Example 1 Image"
+          />
+        </center>
+      </div>
+
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p>
+          We start by labeling our diagram with the given information. We know
+          that $AC=450$ and $K$ is its midpoint, so $AK=CK=225$. We're also
+          given that $CL$ bisects $\angle C$, so we can use the angle bisector
+          theorem on $\triangle ABC$:
+          $$\frac{BL}{AL}=\frac{BC}{AC}\Rightarrow\frac{BL}{AL}=\frac{300}{450}\Rightarrow
+          3BL=2AL$$
+        </p>
+        <p>
+          This suggests that we let $a=2$ and $b=3$ so that our mass point
+          ratios will involve integers. We also have $c=2$ because $AK=CK$.
+        </p>
+        <p>
+          From mass point addition, we see that $k=a+c=4$, $p=k+b=7$, and
+          $l=a+b=5$.
+        </p>
+        <p>
+          Since $L$ has $5/2$ the mass of $C$, it must be $2/5$ as far from $P$.
+          In other words, $LP=\dfrac25 CP$. If we can just find $CP$, we'll be
+          good to go.
+        </p>
+        <p>
+          We're given that $MK=KP$ and $AK=CK$ and we know that vertical angles
+          $AKM$ and $CKP$ are equal, so $\triangle AKM \cong \triangle CKP.$
+          This means that $AM=CP$. We're given that $AM = 180$. Thus, we have
+          $$LP=\frac25CP=\frac25(180)=\boxed{72}.$$
+        </p>
+        <p>
+          An annotated diagram for this problem is shown below. The masses are
+          circled.
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F57ba6fe5-16c6-48be-90be-71a3a5effdc5%2FScreen_Shot_2021-03-18_at_12.27.41_PM.png?table=block&id=e285d904-8f3b-4b92-8d3f-7de01582cac5&width=1150&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt="Walkthrough Image"
+        />
+      </div>
+
+      <!-- PROBLEMS -->
+      <!-- PROBLEMS -->
+      <div class="problems"></div>
+      <p>Instructions</p>
+      <ul style="margin-top: -15px">
+        <li>Solve 55🔥</li>
+        <li>If you have time, solve 82🔥</li>
+        <li>Try to solve at least one of the five problems worth 10+🔥</li>
+      </ul>
+      <div class="toggle">
+        <div class="pts">1</div>
+        <div class="num"></div>
+        <div class="source">MyMathcounts AMC 10 Preparation Book V4</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In triangle $ABC$, point $D$ is on segment $AC$ with $AD:DC=2:1$, and
+          point $E$ is on segment $AB$ with $AE:EB=2:3$. Segments $EC$ and $DB$
+          intersect at point $K$. Find $DK:KB$.
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F87978780-016a-4fff-a404-4df817ecc7e6%2FScreen_Shot_2021-03-31_at_10.10.18_AM.png?table=block&id=d50e4bb3-4b06-4020-97c1-1bf2b1f64584&width=770&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">1</div>
+        <div class="num"></div>
+        <div class="source">Original</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In $\triangle ABC$ below, we have $BC=4$ and $AC=5$. We know that $D$
+          is the midpoint of $BC$. Let $AE=2$. Suppose that $\dfrac{BF}{FE}$ can
+          be written as the fully reduced fraction $\dfrac{m}{n}$. Find $m+n$.
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdba6f789-9567-46e0-8a32-b2eba4cf4ca4%2FScreen_Shot_2021-04-19_at_11.03.49_AM.png?table=block&id=2d48cc71-fdeb-4375-88a5-503c2d6c4ab1&width=580&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">3</div>
+        <div class="num"></div>
+        <div class="source">AMC 8 2019/4</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In triangle $ABC$, point $D$ divides side $\overline{AC}$ so that
+          $AD:DC=1:2$. Let $E$ be the midpoint of $\overline{BD}$ and let $F$ be
+          the point of intersection of line $BC$ and line $AE$. Given that the
+          area of $\triangle ABC$ is $360$, what is the area of $\triangle EBF$?
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F34085d37-37dd-4648-835b-8eed45165809%2FScreen_Shot_2021-03-31_at_10.23.31_AM.png?table=block&id=4518aee6-f913-4541-a7a8-28ac10fc4f82&width=770&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">3</div>
+        <div class="num"></div>
+        <div class="source">AMC 10B 2004/20</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In $\triangle ABC$ points $D$ and $E$ lie on $BC$ and $AC$,
+          respectively. If $AD$ and $BE$ intersect at $T$ so that
+          $\dfrac{AT}{DT}=3$ and $\dfrac{BT}{ET}=4$, what is $\dfrac{CD}{BD}$?
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5495cf5d-534a-47f3-b9a2-a99e1557f4d3%2FScreen_Shot_2021-04-02_at_10.45.22_AM.png?table=block&id=05df2c31-5a31-4d6b-a7e5-858d578a9f02&width=380&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">3</div>
+        <div class="num"></div>
+        <div class="source">MATHCOUNTS</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In right triangle $ABC$ with $\angle C = 90^\circ$, $AC = 4$ and $CB =
+          7$. $E$ is the midpoint of $AC$. Point $F$ lies on $CB$ such that $CF
+          : FB = 3 : 4$. $D$ is the intersection of $AF$ and $EB$. What is the
+          area of $\triangle ABD$?
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F47ea7159-67a4-46c5-a007-20735277d18f%2FScreen_Shot_2021-04-19_at_11.10.27_AM.png?table=block&id=c9c63b40-0787-4801-88a2-71c071be7925&width=670&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">4</div>
+        <div class="num"></div>
+        <div class="source">AMC 12A 2016/12</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In $\triangle ABC$, $AB = 6$, $BC = 7$, and $CA = 8$. Point $D$ lies
+          on $\overline{BC}$, and $\overline{AD}$ bisects $\angle BAC$. Point
+          $E$ lies on $\overline{AC}$, and $\overline{BE}$ bisects $\angle ABC$.
+          The bisectors intersect at $F$. What is the ratio $AF : FD$?
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffe85fbce-e658-4f69-b0db-10ba0ba36f35%2FScreen_Shot_2021-04-02_at_10.59.09_AM.png?table=block&id=dcee99c7-24e8-4a25-929a-ed00889557ff&width=480&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">4</div>
+        <div class="num"></div>
+        <div class="source">MyMathcounts AMC 10 Preparation Book V4</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In $\triangle ABC$, $AG=\frac13 AB$, $BE=\frac13BC$, $CF=\frac13CA$.
+          Find the positive integer value of $x+y+z$ if $AN:NL:LE=x:y:z$.
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F61ac3658-8480-4c9e-a42a-071138c1d2ce%2FScreen_Shot_2021-03-31_at_10.14.59_AM.png?table=block&id=03b7e9cb-d8f1-40f9-8c99-2d20ba1554f0&width=860&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">5</div>
+        <div class="num"></div>
+        <div class="source">Mathcounts</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In rectangle $ABCD$, point $M$ is the midpoint of side $BC$, and point
+          $N$ lies on $CD$ such that $DN : NC = 1 : 4$. Line segment $BN$
+          intersects $AM$ and $AC$ at points $R$ and $S$, respectively. If $NS :
+          SR : RB = x : y : z$, where $x$, $y$, and $z$ are positive integers,
+          what is the minimum possible value of $x + y + z$?
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Faae42a54-6e3e-4fa1-a23d-e3134be62778%2FScreen_Shot_2021-04-21_at_9.40.46_AM.png?table=block&id=e1cd1874-486d-4779-8151-dc0d41cff126&width=670&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">5</div>
+        <div class="num"></div>
+        <div class="source">AIME II 2011/4</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In triangle $ABC$, $AB=20$ and $AC=11$. The angle bisector of $\angle
+          A$ intersects $BC$ at point $D$, and point $M$ is the midpoint of
+          $AD$. Let $P$ be the point of the intersection of $AC$ and $BM$. The
+          ratio of $CP$ to $PA$ can be expressed in the form $\dfrac{m}{n}$,
+          where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">8</div>
+        <div class="num"></div>
+        <div class="source">AIME 1992/14</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In triangle $ABC$, $A'$, $B'$, and $C'$ are on the sides $BC$, $AC$,
+          and $AB$, respectively. Given that $AA'$, $BB'$, and $CC'$ are
+          concurrent at the point $O$, and that
+          $\dfrac{AO^{}_{}}{OA'}+\dfrac{BO}{OB'}+\dfrac{CO}{OC'}=92$, find
+          $\dfrac{AO}{OA'}\cdot \dfrac{BO}{OB'}\cdot \dfrac{CO}{OC'}$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">8</div>
+        <div class="num"></div>
+        <div class="source">AMC 10A 2016/19</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In rectangle $ABCD$, $AB=6$ and $BC=3$. Point $E$ between $B$ and $C$,
+          and point $F$ between $E$ and $C$ are such that $BE=EF=FC$. Segments
+          $\overline{AE}$ and $\overline{AF}$ intersect $\overline{BD}$ at $P$
+          and $Q$, respectively. The ratio $BP:PQ:QD$ can be written as $r:s:t$
+          where the greatest common factor of $r$, $s$, and $t$ is $1$. What is
+          $r+s+t$?
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">10</div>
+        <div class="num"></div>
+        <div class="source">AIME 1988/12</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Let $P$ be an interior point of triangle $ABC$ and extend lines from
+          the vertices through $P$ to the opposite sides. Let $a$, $b$, $c$, and
+          $d$ denote the lengths of the segments indicated in the figure. Find
+          the product $abc$ if $a + b + c = 43$ and $d = 3$.
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc5395d61-546e-4ba1-8c4a-68ec6da3a875%2FScreen_Shot_2021-04-04_at_10.11.00_PM.png?table=block&id=91a23bcc-4ff8-4434-a5ff-99b77edd81cf&width=580&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">12</div>
+        <div class="num"></div>
+        <div class="source">AIME 1985/6</div>
+      </div>
+      <div style="display: none">
+        <p>
+          As shown in the figure, triangle $ABC$ is divided into six smaller
+          triangles by lines drawn from the vertices through a common interior
+          point. The areas of four of these triangles are as indicated. Find the
+          area of triangle $ABC$.
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1bb700ec-b56b-405a-a22c-19649155d528%2FScreen_Shot_2021-04-04_at_10.25.36_PM.png?table=block&id=6a748f0a-5644-4a18-86bb-9aa1cda2dd0c&width=580&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <div class="toggle">
+        <div class="pts">12</div>
+        <div class="num"></div>
+        <div class="source">AIME I 2009/4</div>
+      </div>
+      <div style="display: none">
+        <p>
+          In parallelogram $ABCD$, point $M$ is on $\overline{AB}$ so that
+          $AM:AB=17/1000$ and point $N$ is on $\overline{AD}$ so that
+          $AN:ND=17/2009$. Let $P$ be the point of intersection of
+          $\overline{AC}$ and $\overline{MN}$. Find $\dfrac{AC}{CP}$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">15</div>
+        <div class="num"></div>
+        <div class="source">AIME I 2001/7</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Triangle $ABC$ has $AB=21$, $AC=22$ and $BC=20$. Points $D$ and $E$
+          are located on $\overline{AB}$ and $\overline{AC}$, respectively, such
+          that $\overline{DE}$ is parallel to $\overline{BC}$ and contains the
+          center of the inscribed circle of triangle $ABC$. Then $DE=m/n$, where
+          $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">15</div>
+        <div class="num"></div>
+        <div class="source">AIME 1989/15</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Point $P$ is inside $\triangle ABC$. Line segments $APD$, $BPE$, and
+          $CPF$ are drawn with $D$ on $BC$, $E$ on $AC$, and $F$ on $AB$ (see
+          the figure below). Given that $AP=6$, $BP=9$, $PD=6$, $PE=3$, and
+          $CF=20$, find the area of $\triangle ABC$.
+        </p>
+        <img
+          src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6196a85e-9bee-4ba2-a399-2f8f0d23b66e%2FScreen_Shot_2021-04-04_at_10.17.25_PM.png?table=block&id=1c96c9de-03b7-419b-949e-15309c995936&width=480&userId=080f3c2e-23a6-4063-8497-fe81709d7fcb&cache=v2"
+          alt=""
+        />
+      </div>
+
+      <!-- Do NOT Delete this Div -->
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>
