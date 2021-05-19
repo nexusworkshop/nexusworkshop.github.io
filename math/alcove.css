@@ -67,6 +67,15 @@ body {
   font-family: Marker felt;
 }
 
+/* Going Beyond */
+.GoBeyond::before {
+  content: "🏜 Going Beyond 🏜";
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Marker felt;
+}
+
 /* Definition Box */
 .definition {
   border-radius: 10px;
@@ -180,4 +189,8 @@ h1 {
 .source::after {
   display: inline-block;
   content: ")";
+}
+
+.topback a{
+  color:#743200
 }
