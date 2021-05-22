@@ -1,0 +1,76 @@
+/* Forest Background */
+body {
+  background-image: url("https://images.pexels.com/photos/6825703/pexels-photo-6825703.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+  background-size: 100%;
+  counter-reset: section;
+}
+
+/* Top Background */
+.topback {
+  border-width: 3px;
+  border-style: solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding-top: 10px;
+  padding-right: 3%;
+  padding-bottom: 5px;
+  padding-left: 3%;
+  background: rgb(224, 238, 255);
+  /* background: rgb(175, 220, 250); */
+  background-origin: padding-box;
+  background-position: center;
+}
+
+/* Toggles */
+.toggle {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.toggle:hover {
+  color: #021fa1;
+}
+
+.toggle::before {
+  content: "► ";
+  font-size: 0.3cm;
+}
+
+/* Problem */
+
+.problem {
+  border-radius: 10px;
+  border: 2.5px solid #002405;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-image: linear-gradient(to right, #d0e1f9, #8ebdff);
+}
+
+.title {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.topback img {
+  width: 40%;
+  margin-top: 1%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Heading */
+h1 {
+  font-family: Marker Felt;
+}
+
+.topback a {
+  color: #021fa1;
+}
