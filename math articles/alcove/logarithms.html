@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/math/alcove.css" />
+    <script src="/math/toggle.js"></script>
+    <!-- MathJax -->
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <!-- Header and Footer -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/headerfooter/headerfooter.js"></script>
+    <title>Logarithms</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="topback">
+      <h1>Logarithms</h1>
+      <em
+        >The inverse of exponentiation. Logarithm problems range in difficulty
+        from the mundane to the sublime but appear nearly every year on the AMC
+        12 and AIME.</em
+      >
+      <p>
+        Prerequisites: This article will be most useful to those who are looking
+        to extend their knowledge to more difficult contest math problems. Those
+        who have no experience with logarithms should consider finding
+        additional practice until they are comfortable with the properties
+        described in the theory section.
+      </p>
+      <!-- THEORY -->
+      <!-- THEORY -->
+      <div class="theory"></div>
+      <!-- What Are Logarithms -->
+      <div class="toggle">What Are Logarithms?</div>
+      <div style="display: none">
+        <p>
+          Suppose we wish to isolate $x$ in the equation $a^x=b$. How would we
+          do this?
+        </p>
+        <p>Here's where logarithms come into play.</p>
+        <div class="definition">
+          <div class="defname">Logarithm</div>
+          <p>
+            Given any number $a>0$ and $a\neq 1$, $$\log_ab=x
+            \Longleftrightarrow a^x=b.$$ We refer to $x$ as the exponent, $a$ as
+            the base, and $b$ as the argument.
+          </p>
+        </div>
+        <p>
+          For example $\log_216=4$ because $2^4=16$. Similarly, we also have
+          $\log_5(\frac{1}{25})=-2$, and $\log_{\frac{1}{2}}(\frac{1}{8})=3$.
+        </p>
+        <p>
+          Note that $a^x=b$ is referred to as exponential form while $x=\log_ab$
+          is referred to as logarithmic form.
+        </p>
+        <p></p>
+        <p>
+          Unless stated otherwise, if a logarithm does not include a base,
+          assume the base is 10. If the logarithm is written as "ln" instead of
+          "log," assume the base is $e$.
+        </p>
+        <p>
+          Now that we've got a grasp on the basics, let's take a look at some
+          fundamental rules. From now on, assume that all variables are positive
+          for the rest of the theory section.
+        </p>
+        <!-- Blowfish -->
+      </div>
+      <!-- Addition -->
+      <div class="toggle">Addition</div>
+      <div style="display: none">
+        <div class="theorem">
+          <div class="thmname">Addition</div>
+          <p>
+            <center>
+              $\log_ab+\log_ac=\log_a(bc)$
+            </center>
+          </p>
+        </div>
+        <p>
+          <em>Proof. </em> By Theorem 1, we have
+        </p>
+        <center>
+          <p>
+            $\log_ab+\log_ac=x+y=\log_a(bc).$
+          </p>
+        </center>
+      </div>
+
+      <!-- Power Rule -->
+      <div class="toggle">Power Rule</div>
+      <div style="display: none">
+        <div class="theorem">
+          <div class="thmname">Power Rule</div>
+          <p>
+            <center>
+              $\log_a(b^n)=n\log_ab$
+            </center> 
+          </p>
+        </div>
+        <p><em>Proof. </em>By Theorem 1, we have</p>
+        <center>
+          $n\log_ab=\underbrace{\log_ab+\log_ab+...+\log_ab}_{n \text{ times}}=\log_a(b^n).$
+        </center>
+      </div>
+      <!-- Subtraction -->
+      <div class="toggle">Subtraction</div>
+      <div style="display: none">
+        <div class="theorem">
+          <div class="thmname">Subtraction</div>
+          <p>
+            <center>
+              $$\log_ab-\log_ac=\log_a\left(\frac{b}{c}\right)$$
+            </center>
+          </p>
+        </div>
+        <p>
+          <em>Proof. </em>Using Theorem 2 and then Theorem 1, we have
+        </p>
+        <center>
+          $$\log_ab-\log_ac=\log_ab+\log_a\left(\frac{1}{c} \right)=\log_a\left(\frac{b}{c}\right).$$
+        </center>
+      </div>
+
+      <!-- Change of Base -->
+      <div class="toggle">Change of Base</div>
+      <div style="display: none">
+        <div class="theorem">
+          <div class="thmname">Change of Base</div>
+          <p>
+            <center>
+              $$\frac{\log_ab}{\log_ac}=\log_cb$$
+            </center>
+          </p>
+        </div>
+        <p>
+          <em>Proof. </em>Let $\log_ab=x$, $\log_ac=y$,  $\log_cb=z$. Then  $a^x=b$, $a^y=c$, and $c^z=b$. We have
+        </p>
+        <center>
+          $$(a^y)^z=a^x\implies \frac{x}{y}=z \implies \frac{\log_ab}{\log_ac}=\log_cb.$$
+        </center>
+        <p>
+          Note that if we let $a=10$, we simply get
+        </p>
+        <center>
+          $$\frac{\log b}{\log c}=\log_cb.$$
+        </center>
+      </div>
+
+      <!-- Summary and Problem Solving Tips -->
+      <div class="toggle">Summary and Problem Solving Tips</div>
+      <div style="display: none">
+        <p>
+          The two most useful properties are the change of base formula and the conversion from exponential to logarithmic form. Generally, these are enough to derive many other properties.
+        </p>
+        <p>
+          The change of base formula can be useful <u>in reverse</u>, especially if you're able to rewrite several logarithms as fractions and then do some canceling.
+        </p>
+      </div>
+
+      <!-- WALKTHROUGHS -->
+      <!-- WALKTHROUGHS -->
+      <br />
+      <div class="walkthrough"></div>
+
+      <div class="example">
+        <div class="exmname">AMC 12B 2021/9</div>
+        What is the value of
+        <center>
+          $$\frac{\log_2 80}{\log_{40}2}-\frac{\log_2 160}{\log_{20}2}?$$
+        </center>
+      </div>
+
+      <div class="toggle">Walkthrough</div>
+      <div style="display: none">
+        <p>
+          <em>Key: get rid of the fractions and then recognize that there is a convenient substitution.</em>
+        </p>
+        <ol>
+          <li>Show that $\dfrac{1}{\log_{a}b} = \log_ba$, and then apply it to our problem.</li>
+          <li>Let $x=\log_220$, and then write everything in terms of $x$.</li>
+          <li>Expand the resulting expression.</li>
+        </ol>
+      </div>
+
+      <div class="toggle">Answer</div>
+      <div style="display: none">
+        <p>
+            2
+        </p>
+      </div>
+
+      <div class="example">
+        <div class="exmname">AIME II 2020/3</div>
+        The value of $x$ that satisfies $\log_{2^x} 3^{20} = \log_{2^{x+3}} 3^{2020}$ can be written as $\dfrac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+      </div>
+
+      <div class="toggle">Walkthrough</div>
+      <div style="display: none">
+        <p>
+          <em>Key: get rid of the exponents in both the base and the argument.</em>
+        </p>
+        <ol>
+          <li>Show that $\log_{a^n}b^m=\dfrac{m}{n}\log_ab$ using the properties of exponents, and then apply it to our problem.</li>
+          <li>Cross multiply, then solve the resulting linear equation.</li>
+        </ol>
+      </div>
+
+      <div class="toggle">Answer</div>
+      <div style="display: none">
+        <p>
+            103
+        </p>
+      </div>
+
+      <div class="example">
+        <div class="exmname">AMC 12B 2013/22</div>
+        Let $m>1$ and $n>1$ be integers. Suppose that the product of the solutions for $x$ of the equation
+        <center>
+          $$8(\log_n x)(\log_m x)-7\log_n x-6 \log_m x-2013 = 0$$
+        </center>
+        is the smallest possible integer. What is $m+n$?
+      </div>
+
+      <div class="toggle">Walkthrough</div>
+      <div style="display: none">
+        <p>
+          <em>Key: look for a way to use Vieta's formulas.</em>
+        </p>
+        <ol>
+          <li>Rearrange the expression so that it is a quadratic with respect to $\log  x$.</li>
+          <li>Use Vieta's Formula and simplify the resulting expression.</li>
+          <ul>
+            <li>Hint: If you try to use Vieta's to directly find the product of the possible values of $\log x$, you'll get something quite ugly. Instead, think about how you could use the addition property of logarithms to your advantage.</li>
+          </ul>
+          <li>
+            Remember that $m$ and $n$ are both integers greater than $1$. This severely limits our options since this is an optimization problem. Analyze the exponents of the expression you're trying to minimize and make sure they come out to be integers.
+          </li>
+        </ol>
+      </div>
+
+      <div class="toggle">Answer</div>
+      <div style="display: none">
+        <p>
+            12
+        </p>
+      </div>
+
+      <!-- PROBLEMS -->
+      <!-- PROBLEMS -->
+      <div class="problems"></div>
+      <p>Instructions</p>
+      <ul style="margin-top: -15px">
+        <li>Solve 57🔥</li>
+        <li>If you have time, solve 86🔥</li>
+        <li>Try to solve at least one of the five problems worth 10+🔥</li>
+      </ul>
+      <div class="toggle">
+        <div class="pts">1</div>
+        <div class="num"></div>
+        <div class="source">OMO Fall 2016/4</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Let $G=10^{10^{100}}$ (a.k.a. a googolplex). Then
+        <center>
+          $$\log_{\left(\log_{\left(\log_{10} G\right)} G\right)} G$$
+        </center>
+        can be expressed in the form $\dfrac{m}{n}$ for relatively prime positive integers $m$ and $n$. Determine the sum of the digits of $m+n$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">3</div>
+        <div class="num"></div>
+        <div class="source">AIME I 2007/7</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Let
+          <center>
+            $$N = \sum_{k = 1}^{1000} k ( \lceil \log_{\sqrt{2}} k \rceil - \lfloor \log_{\sqrt{2}} k \rfloor ).$$
+          </center>
+          Find the remainder when $N$ is divided by $1000$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">3</div>
+        <div class="num"></div>
+        <div class="source">AMC 12A 2021/14</div>
+      </div>
+      <div style="display: none">
+        <p>
+          What is the value of
+          <center>
+            $$\left(\sum_{k=1}^{20} \log_{5^k} 3^{k^2}\right)\cdot\left(\sum_{k=1}^{100} \log_{9^k} 25^k\right)?$$
+          </center>
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">3</div>
+        <div class="num"></div>
+        <div class="source">CMC 12B 2021/11</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Alice and Billy are told by their teacher to compute "$\log x$ to the power of $\log x$ to the power of $\log x$'' for some constant $x$, where $\log$ is the base-10 logarithm. Alice computes
+          <center>
+            $$\log\left(x^{\log\left(x^{\log x}\right)}\right)$$
+          </center>
+          while Billy computes
+          <center>
+            $$\left((\log x)^{\log x}\right)^{\log x},$$
+          </center>
+          but surprisingly, they get the same answer. Let $S$ be the sum of $(\log x)^2$ over all possible values of $x$. Find $S$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">4</div>
+        <div class="num"></div>
+        <div class="source">HMMT February Algebra 2014/3</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Let
+          <center>
+            $$A = \frac{1}{6}((\log_2(3))^3-(\log_2(6))^3-(\log_2(12))^3+(\log_2(24))^3). $$
+          </center>
+          Compute $2^A$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">4</div>
+        <div class="num"></div>
+        <div class="source">Math Prize For Girls 2011/4</div>
+      </div>
+      <div style="display: none">
+        <p>
+          If $x > 10$, what is the greatest possible value of the expression:
+          <center>
+            $${( \log x )}^{\log \log \log x} - {(\log \log x)}^{\log \log x} ? $$
+          </center>
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">5</div>
+        <div class="num"></div>
+        <div class="source">SMT Algebra 2020/2</div>
+      </div>
+      <div style="display: none">
+        <p>
+          If $a$ is the only real number that satisfies $\log_{2020} a = 202020-a$ and $b$ is the only real number that satisfies $2020^b = 202020 - b$, what is the value of $a + b$?
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">5</div>
+        <div class="num"></div>
+        <div class="source">AIME II 2010/5</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Positive numbers $x, y,$ and $z$ satisfy $xyz = 10^{81}$ and $(\log_{10}x)(\log_{10} yz) + (\log_{10}y) (\log_{10}z) = 468$. Find$\sqrt {(\log_{10}x)^2 + (\log_{10}y)^2 + (\log_{10}z)^2}$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">6</div>
+        <div class="num"></div>
+        <div class="source">HMMT February Algebra 2020/3</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Let $a=256$. Find the unique real number $x>a^2$ such that
+          <center>
+            $$\log_a \log_a \log_a x = \log_{a^2} \log_{a^2} \log_{a^2} x.$$
+          </center>
+          Your answer should be written in the form of $m^n$ where $m$ is prime.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">6</div>
+        <div class="num"></div>
+        <div class="source">AMC 12A 2017/20</div>
+      </div>
+      <div style="display: none">
+        <p>
+          How many ordered pairs $(a,b)$ such that $a$ is a positive real number and $b$ is an integer between $2$ and $200$, inclusive, satisfy the equation 
+          <center>
+            $(\log_b a)^{2017}=\log_b(a^{2017})?$
+          </center>
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">7</div>
+        <div class="num"></div>
+        <div class="source">AIME II 2017/7</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Find the number of integer values of $k$ in the closed interval $[-500,500]$ for which the equation $\log(kx)=2\log(x+2)$ has exactly one real solution.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">7</div>
+        <div class="num"></div>
+        <div class="source">AIME I 2004/12</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Let $S$ be the set of ordered pairs $(x, y)$ such that $0 \le x \le 1, 0\le y\le 1,$ and $\left[\log_2{\left(\dfrac 1x\right)}\right]$ and $\left[\log_5{\left(\dfrac 1y\right)}\right]$ are both even. Given that the area of the graph of $S$ is $\dfrac{m}{n},$ where $m$ and $n$ are relatively prime positive integers, find $m+n$. The notation $[z]$ denotes the greatest integer that is less than or equal to $z$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">8</div>
+        <div class="num"></div>
+        <div class="source">AMC 12A 2009/24</div>
+      </div>
+      <div style="display: none">
+        <p>
+          The tower function of twos is defined recursively as follows: $T(1) = 2$ and $T(n + 1) = 2^{T(n)}$ for $n\ge1$. Let $A = (T(2009))^{T(2009)}$ and $B = (T(2009))^A$. What is the largest integer $k$ for which
+          <center>
+            $$\underbrace{\log_2\log_2\log_2\ldots\log_2B}_{k\text{ times}}$$
+          </center>
+          is defined?
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">8</div>
+        <div class="num"></div>
+        <div class="source">AIME I 2009/7</div>
+      </div>
+      <div style="display: none">
+        <p>
+          The sequence $(a_n)$ satisfies $a_1 = 1$ and $5^{(a_{n + 1} - a_n)} - 1 = \dfrac {1}{n + \frac {2}{3}}$ for $n \geq 1$. Let $k$ be the least integer greater than $1$ for which $a_k$ is an integer. Find $k$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">10</div>
+        <div class="num"></div>
+        <div class="source">AIME I 2010/14</div>
+      </div>
+      <div style="display: none">
+        <p>
+          For each positive integer $n$, let 
+          <center>
+            $f(n) = \sum_{k = 1}^{100} \lfloor \log_{10} (kn) \rfloor.$
+          </center>
+          Find the largest value of $n$ for which $f(n) \le 300$.
+        </p>
+        <p>
+          Note that  $\lfloor x \rfloor$ is the greatest integer less than or equal to $x$.
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">10</div>
+        <div class="num"></div>
+        <div class="source">AMC 12A 2019/23</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Define binary operations $\diamondsuit$ and $\heartsuit$ by
+          <center>
+            $$a \, \diamondsuit \, b = a^{\log_{7}(b)} \qquad \text{and} \qquad a \, \heartsuit \, b = a^{\frac{1}{\log_{7}(b)}}$$
+          </center>
+          for all real numbers $a$ and $b$ for which these expressions are defined. The sequence $(a_n)$ is defined recursively by $a_3 = 3\, \heartsuit\, 2$ and
+          <center>
+            $$a_n = (n\, \heartsuit\, (n-1)) \,\diamondsuit\, a_{n-1}$$
+          </center>
+          for all integers $n \geq 4$. To the nearest integer, what is $\log_{7}(a_{2019})$?
+        </p>
+      </div>
+
+      <div class="toggle">
+        <div class="pts">12</div>
+        <div class="num"></div>
+        <div class="source">AIME I 2017/14</div>
+      </div>
+      <div style="display: none">
+        <p>
+          Let $a > 1$ and $x > 1$ satisfy $\log_a(\log_a(\log_a 2) + \log_a 24 - 128) = 128$ and $\log_a(\log_a x) = 256$. Find the remainder when $x$ is divided by $1000$.
+        </p>
+      </div>
+
+      <div class="GoBeyond">
+      </div>
+      <p>So you've just finished reading the article and trying the practice problems. Now what? If you want to see how you did, please fill out <a href="https://forms.gle/irbGmYLF2qLeujym6" target="_blank">this Google Form</a> that will automatically grade your responses and tell you your score.</p>
+      <p>
+        If you'd like to stay updated, please <a href="https://docs.google.com/forms/d/1jUX0gAa3IbBYNH4GGSWq5HcQ5W8t5I5sOlhur-QlSzo/viewform?edit_requested=true#responses" target="_blank">join our mailing list</a> so we can let you know whenever new content is posted! We'll also give you access to the Nexus Discord server, where you'll be able to hang out and discuss math with our community. 
+      </p>
+      <p>
+        Found a mistake? Please report it via <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4UnREd7__tIq_29Mt4KnErosVzFstk2KUZ0VkqkRkgjUuvg/viewform" target="_blank">this Google Form</a>.
+      </p>
+      <p>
+        Have a topic you'd like to see an article on? Suggest it <a href="https://forms.gle/6nMD9eZ9UhQ5Qx617" target="_blank">here</a>. We'd love to hear from you and will get back to you as soon as we can.
+      </p>
+      <!-- Do NOT Delete this Div -->
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>
