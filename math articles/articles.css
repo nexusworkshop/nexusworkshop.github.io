@@ -5,7 +5,10 @@ body {
   background-size: 100% auto;
   background-repeat: repeat-y;
   color: #a5f2f3;
-  counter-reset: section;
+  counter-reset: alcove;
+  counter-reset: coastline;
+  counter-reset: glade;
+  counter-reset: tundra;
 }
 
 html {
@@ -95,21 +98,21 @@ html {
 }
 
 .numberalcove::before {
-  counter-increment: section;
-  content: "Alcove Article " counter(section) ": ";
+  counter-increment: alcove;
+  content: "Alcove Article " counter(alcove) ": ";
 }
 
 .numbercoastline::before {
-  counter-increment: section;
-  content: "Coastline Article " counter(section) ": ";
+  counter-increment: coastline;
+  content: "Coastline Article " counter(coastline) ": ";
 }
 
 .numberglade::before {
-  counter-increment: section;
-  content: "Glade Article " counter(section) ": ";
+  counter-increment: glade;
+  content: "Glade Article " counter(glade) ": ";
 }
 
 .numbertundra::before {
-  counter-increment: section;
-  content: "Tundra Article " counter(section) ": ";
+  counter-increment: tundra;
+  content: "Tundra Article " counter(tundra) ": ";
 }
