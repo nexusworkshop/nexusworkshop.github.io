@@ -29,243 +29,114 @@
     <!-- Header and Footer -->
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="/headerfooter/headerfooter.js"></script>
-    <title>Vandermonde's Identity</title>
+    <title>Distinguishability</title>
   </head>
   <body>
     <div id="header"></div>
     <div class="topback">
-      <h1>Vandermonde's Identity</h1>
+      <h1>Distinguishability and Repetition</h1>
       <em
-        >The inverse of exponentiation. Logarithm problems range in difficulty
-        from the mundane to the extreme but appear nearly every year on the AMC
-        12 and AIME.</em
-      >
-      <p>
-        Prerequisites: This article will be most useful to those who are looking
-        to extend their knowledge to more difficult contest math problems. Those
-        who have no experience with logarithms should consider finding
-        additional practice until they are comfortable with the properties
-        described in the theory section.
-      </p>
+        >A combinatorial problem-solving skill that is extremely important at
+        the computational levels. Problems appeaer nearly every year from the
+        AMC 8 all the way to AIME.
+      </em>
+      <p>Prerequisites:</p>
       <!-- THEORY -->
       <!-- THEORY -->
       <div class="theory"></div>
-      <!-- What Are Mass Points -->
-      <div class="toggle">What Are Logarithms?</div>
+      <!-- What Is Distinguishability -->
+      <div class="toggle">What Is Distinguishability?</div>
       <div style="display: none">
-        <p>
-          Suppose we wish to isolate $x$ in the equation $a^x=b$. How would we
-          do this?
-        </p>
-        <p>Here's where logarithms come into play.</p>
+        <p>First of all, let's define distinguishability.</p>
         <div class="definition">
-          <div class="defname">Logarithm</div>
+          <div class="defname">Distinguishability</div>
           <p>
-            Given any number $a>0$ and $a\neq 1$, $$\log_ab=x
-            \Longleftrightarrow a^x=b.$$ We refer to $x$ as the exponent, $a$ as
-            the base, and $b$ as the argument.
+            If a group of objects do not look alike, they are distinguishable.
+            Otherwise, they are indistinguishable.
           </p>
         </div>
         <p>
-          For example $\log_216=4$ because $2^4=16$. Similarly, we also have
-          $\log_5(\frac{1}{25})=-2$, and $\log_{\frac{1}{2}}(\frac{1}{8})=3$.
+          For example, a red and blue ball are distinguishable because they have
+          different color, but two red balls are not distinguishable because
+          they are both the same color.
         </p>
         <p>
-          Note that $a^x=b$ is referred to as exponential form while $x=\log_ab$
-          is referred to as logarithmic form.
+          Often, one of the first questions you should ask yourself after
+          reading a problem is what objects are distinguishable, and which ones
+          are distinguishable.
+        </p>
+        <p>
+          Another important factor to consider when reading a problem is
+          repetition. Are you allowed to do the same thing twice?
+        </p>
+        <p>
+          Imagine that we're in a sandwhich shop at the beeach. Let's take a
+          look on how distinguishability and repetition affect how we can pick
+          our sandwhiches.
+        </p>
+      </div>
+      <!-- Distinguishable Ingredients, Ingredient Repetition Allowed  -->
+      <div class="toggle">
+        Distinguishable Ingredients, Ingredient Repetition Allowed
+      </div>
+      <div style="display: none">
+        <p>
+          Let's say the shop allows us to put $k$ of the ingredients onto our
+          sandwhich. Since the ingredients are stacked on each other, the order
+          they are put on is distinguishable and thus are distinguishable.
+        </p>
+        <p>
+          For the first ingredient, we can pick any of the $n$ ingredients. For
+          the second ingredient, we can still pick any of the $n$ ingredients
+          because repetition is allowed. For the $1\le i\le k$ ingredient, we
+          can still pick $n$ ingredients.
+        </p>
+        <p>
+          Thus, there are $$\underbrace{n\cdot n \cdot n\cdot ... \cdot
+          n}_{k\text{ ingredients}}=n^k$$ possible sandwhiches.
+        </p>
+      </div>
+
+      <!-- Distinguishable Ingredients, Ingredient Repetition Allowed  -->
+      <div class="toggle">
+        Distinguishable Ingredients, Ingredient Repetition Not Allowed
+      </div>
+      <div style="display: none">
+        <p>
+          We've finally eaten all of the $n^k$ sandwhiches, but we're still
+          hungry. We return back to the store, ready to order the same thing.
+          However, the sandwhich shop changed it's menu! Now, we cannot order
+          the same ingredient twice. How many distinguishable sandwhiches can we
+          order now? Let's take a look at factorials before we tackle this
+          problem.
         </p>
         <p></p>
-        <p>
-          Unless stated otherwise, if a logarithm does not include a base,
-          assume the base is 10. If the logarithm is written as "ln" instead of
-          "log," assume the base is $e$.
-        </p>
-        <p>
-          Now that we've got a grasp on the basics, let's take a look at some
-          fundamental rules. From now on, assume that all variables are positive
-          for the rest of the theory section.
-        </p>
-        <!-- Blowfish -->
-      </div>
-      <!-- Archimides' Law of the Lever and Centers of Mass -->
-      <div class="toggle">Archimedes' Law of the Lever and Centers of Mass</div>
-      <div style="display: none">
-        <p>
-          Now that we know what mass points are, let's take a look at why
-          they're useful! But before we get started, it would be worthwhile to
-          understand the motivation behind where mass points come from. Let's
-          take a look at Archimedes' Law of the Lever.
-        </p>
-        <div class="theorem">
-          <div class="thmname">Archimedes' Law of the Lever</div>
-          <p>
-            Magnitudes are in equilibrium at distances reciprocally proportional
-            to their weights.
-          </p>
-        </div>
-        <p>
-          Don't worry if that was confusing. To better understand this, consider
-          the seesaw illustrated below. Different masses are placed on the two
-          ends. In order to keep the seesaw in equilibrium, heavier masses must
-          be placed <b>closer</b> to the fulcrum (the point that the seesaw is
-          resting on) and lighter masses must be placed <b>farther</b> away. The
-          product of each mass and its distance to the fulcrum must be the same.
-        </p>
-        <center>
-          <img src="https://bit.ly/2QTMrH3" alt="Picture of Fulcrum" />
-        </center>
-        <p>
-          In the above image, Archimedes' Law of the Lever states that
-          $m_1d_1=m_2d_2$.
-        </p>
-        <p>
-          As with all of our other diagrams, this is only a sketch and is not to
-          scale. The boxes are there for illustrative purposes and are supposed
-          to represent mass points. In practice, more massive points on the
-          seesaw would not take up more physical space. (After all, all points
-          are technically the same size.) Thus, from a purely mathematical
-          perspective, each distance $d_i$ should be the distance from each mass
-          point to the fulcrum.
-        </p>
         <div class="definition">
-          <div class="defname">Center of Mass</div>
-          <p>
-            Given a system of objects, the <b>center of mass</b> gives the
-            average location of those objects with respect to each object's
-            mass. Every system of mass points has a unique center of mass.
-          </p>
+          <div class="defname">Factorial</div>
+          <p>$$n!=(n)\cdot(n-1)\cdot(n-2)\cdot \cdot \cdot 2 \cdot 1$$</p>
         </div>
         <p>
-          Think of it as a "balancing point." (In physics, we often treat large
-          or irregularly shaped objects as having all of their mass located at
-          their center of mass.) For example, if we have a system of two
-          identical mass points, their center of mass will be located right in
-          between them. On the contrary, if one of those points is heavier than
-          the other, the center of mass will be located closer to the heavier
-          point.
+          If $k=n$ in our problem, this is what happens! We have $n$ objects for
+          the first choice. For the second choice, we can choose everything
+          other than the first choice, so we have $n-1$ choices. For the $i$th
+          choice, we can choose anything other than the $i-1$ previous choices.
         </p>
-        <div class="theorem">
-          <div class="thmname">Mass Point Addition</div>
-          <p>
-            Supoise we have mass points $aP$ and $bQ$. Let their center of mass
-            be point $R$. Then $R$ has a mass of $a+b.$
-          </p>
-        </div>
         <p>
-          Archimedes' Law of the Lever tells us that $$a(PR)=b(RQ),$$ so $R$
-          must be located such that $$\frac{a}{b}=\frac{RQ}{PR}.$$
+          Unfortunately, the world is not always simple and $k\neq n$ at the
+          sandwhich shop. What happens now?
         </p>
-        <p>Also, mass point addition is both commutative and associative.</p>
         <p>
-          We can also extend this property to include mass point subtraction. To
-          do this, suppose that we were instead given two mass points $cP$ and
-          $dR$, with $d>c$. We can then subtract them to find the mass of a
-          third point $Q$, located on the other side of $R$ opposite $P$:
-          $$dR-cP = (d-c)Q.$$ In other words, the center of mass of mass points
-          $cP$ and ($d-c)Q$ is $dR$, where $R$ is located in between $P$ and
-          $Q$.
+          Notice that the start is the same. However, the ending is different.
+          Instead of going all the way to $1$, we go to $n-k+1$ because we can
+          only choose $k$ ingredients there are $k$ ingredients between $n$ and
+          $n-k+1$ inclusive.
         </p>
-      </div>
-      <!-- Systems of More than Two Mass Points -->
-      <div class="toggle">Systems of More than Two Mass Points</div>
-      <div style="display: none">
-        <p>
-          We just established the idea of balancing a "seesaw" to find the
-          center of mass of two mass points. But what if we've got three or four
-          mass points? Or even more than that? Luckily, the mass points
-          technique can easily be extended to systems of lots of points. For
-          example, most basic mass points problems involve triangles,
-          specifically cevians:
-        </p>
+        <p>This leads us to our definition of permutations</p>
         <div class="definition">
-          <div class="defname">The Cevian</div>
-          <p>
-            For a given triangle $ABC$, a <b>cevian</b> is a line segment from
-            one vertex to the opposing side. The term "cevian" is very broad and
-            can include angle bisectors, medians, perpendicular bisectors, etc.
-            (Note that not all perpendicular bisectors are cevians because they
-            don't necessarily go through one of the triangle's vertices.)
-          </p>
+          <div class="defname">Permutation</div>
+          <p>A permutation $(n,k)$ is equal to $$\frac{n!}{(n-k)!}$$</p>
         </div>
-        <p>In the image below, $AD$ is a cevian of $\triangle ABC$.</p>
-        <center>
-          <img src="https://bit.ly/3f250Rk" alt="Picture of Cevian" />
-        </center>
-        <p>
-          When solving basic mass points problems, you'll often be given a
-          triangle with a few cevians where you have to find a specific ratio of
-          lengths. To do this, let the intersection of those cevians be the
-          triangle's center of mass. Then you'll be able to treat each cevian as
-          a "seesaw" and assign weights to the triangle's vertices accordingly.
-        </p>
-      </div>
-      <!-- Splitting Mass Points -->
-      <div class="toggle">Splitting Mass Points</div>
-      <div style="display: none">
-        <p>
-          Now we know how to assign mass points to triangles with cevians, but
-          what if we're not dealing with cevians? What if we're dealing with
-          lines that still intersect the triangle but don't go through any of
-          its vertices? In this case, you're probably wondering about
-          transversals:
-        </p>
-        <div class="definition">
-          <div class="defname">The Transversal</div>
-          <p>
-            A <b>transversal</b> is a line intersecting two distinct lines at
-            two distinct points.
-          </p>
-        </div>
-        <p>
-          In the image below, $DE$ is a transversal because it intersects $AB$
-          and $AC$ at points $D$ and $E$.
-        </p>
-        <center>
-          <img src="https://bit.ly/3uySXSa" alt="Picture of Transversal" />
-        </center>
-        <p>To address these scenarios, use the following method:</p>
-        <p>
-          Imagine that sides $AB$ and $AC$ are separate "seesaws" with fulcrums
-          at $D$ and $E$. See how point $A$ is suddenly a part of two different
-          seesaws? This means that $A$ will have a split mass.
-        </p>
-        <p>
-          Pretend that $A$ is made up of two points stuck together: $A_1$ and
-          $A_2$. $A_1$ and $B$ constitute a set of mass points with $D$ as their
-          center of mass, while $A_2$ and $C$ constitute a separate set of mass
-          points with $E$ as their center of mass.
-        </p>
-
-        <p>
-          Now suppose that $A_1$ has a mass of $x$ and $A_2$ has a mass of $y$.
-          Now we can just add those two mass points to find the mass of point
-          $A$: $$xA_1+yA_2=(x+y)A,$$ so the mass of $A$ is just $x+y$.
-        </p>
-      </div>
-
-      <!-- Summary and Problem Solving Tips -->
-      <div class="toggle">Summary and Problem Solving Tips</div>
-      <div style="display: none">
-        <p>
-          Mass points problems often start with a diagram and some ratios of
-          lengths. These ratios can help you determine what masses to assign to
-          which points. After that, Archimedes' Law of the Lever can be used to
-          figure out remaining ratios of lengths.
-        </p>
-        <p>
-          When dealing with cevians of a triangle, treat their intersection as
-          the triangle's center of mass and use Archimedes' Law of the Lever on
-          each cevian.
-        </p>
-        <p>
-          Consider assigning masses that are multiples of the given lengths or
-          ratios of lengths to make your calculations easier.
-        </p>
-        <p>
-          When annotating diagrams, it can be useful to circle your mass values
-          on your diagrams to avoid confusing them with lengths. We will do this
-          for the example problems.
-        </p>
+        <p>Can you see why this is the answer to our question?</p>
       </div>
 
       <!-- WALKTHROUGHS -->
