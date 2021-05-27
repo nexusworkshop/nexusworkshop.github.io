@@ -32,7 +32,7 @@
     <!-- Header and Footer -->
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="/headerfooter/headerfooter.js"></script>
-    <title>Logarithms</title>
+    <title>POTD Season 1</title>
   </head>
   <body>
     <div id="header"></div>
@@ -48,6 +48,42 @@
       </ol>
       <!-- Problems and Solutions -->
       <h2>Problems and Solutions</h2>
+      <!-- May 25 and May 26 -->
+      <div class="problem">
+        <div class="title">
+          May 25, 2021 and May 26, 2021 (CMIMC Combinatorics #1)
+        </div>
+        <p>
+          Robert colors each square in an empty 3 by 3 grid either red or green.
+          Find the number of colorings such that no row or column contains more
+          than one green square.
+        </p>
+      </div>
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        Let $k$ be the number of green squares. By Pigeonhole, $0\le k \le 3$.
+        Now we do casework.
+        <ul>
+          <li>$k=0$. There is only 1 coloring, of all red squares.</li>
+          <li>
+            $k=1$. There is 9 colorings because you can place the one green
+            square in any of 9 squares.
+          </li>
+          <li>
+            $k=2$. There is $\frac{1}{2}(9 \cdot 4)=18$ because there are only
+            four choices left for the second green square after placing the
+            first green square, and we divide by 2 because order does not
+            matter.
+          </li>
+          <li>
+            $k=3$. There are $\frac{1}{6}(9 \cdot 4 \cdot 1)=6$ colorings. There
+            are 9 choices for the first green square, 4 for the second green
+            square, and 1 for the last green square. We divide by 6 because
+            order does not matter.
+          </li>
+        </ul>
+        Adding up our cases gives $1+9+18+6=\boxed{34}$.
+      </div>
       <!-- May 24 -->
       <div class="problem">
         <div class="title">May 24, 2021 (PUMAC Algebra B 2010/1)</div>
@@ -62,7 +98,6 @@
         (3^4 - 4\cdot 3) \\ &= (64 - 12) - (81 - 12) \\ &= \boxed{-17}
         \end{align*}$$
       </div>
-      <!-- May 25 -->
 
       <br /><br /><br /><br /><br /><br /><br />
 
