@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/math/alcove.css" />
+    <script src="/math/toggle.js"></script>
+    <!-- MathJax -->
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <!-- Header and Footer -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/headerfooter/headerfooter.js"></script>
+    <title>Calculus Camp Application Test</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="topback">
+      <h1>Calculus Camp Application Test</h1>
+      <p>
+        Application test for the <a href="/camp/camp.html">Calculus Camp</a>.
+        This test is intended to be hard.
+      </p>
+      <h3>Problem 1</h3>
+      <p>Problem text goes here</p>
+      <h3>Problem 2</h3>
+      <p>
+        Find $\sin \left(\frac{\pi}{15}\right)\cdot \sin
+        \left(\frac{2\pi}{15}\right)\cdot \sin\left(\frac{4\pi}{15}\right)\cdot
+        \sin\left(\frac{8\pi}{15}\right)$
+      </p>
+      <h3>Problem 3</h3>
+      <p>
+        Region $R$ contains all of the points $(x,y)$ with $x,y>0$ such that
+        $x+y\le \frac{13\pi}{2}$ and $\cos(x+y)\ge 0$. Find the area of $R$.
+      </p>
+
+      <!-- Do NOT Delete this Div -->
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>
