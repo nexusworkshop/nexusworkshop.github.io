@@ -92,3 +92,7 @@ html {
   margin-right: 5%;
   font-style: italic;
 }
+
+p a {
+  color: #9388fa;
+}
