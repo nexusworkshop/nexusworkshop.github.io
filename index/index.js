@@ -20,18 +20,22 @@ window.addEventListener("mousemove", function (evt) {
 
 let circleArray = [];
 
-let colors = ["#F1F1F2", "#A1D6E2", "#1995AD"];
+let colors = [
+  "rgba(255, 255, 255, 0.623)",
+  "rgba(165, 242, 243, 0.6)",
+  "rgba(82, 114, 255, 0.6)",
+];
 
 class Circle {
   constructor(x, y, radius, color) {
     this.x = x;
     this.y = y;
-    this.dx = randomInt(-3, 3);
-    this.dy = randomInt(-3, 3);
+    this.dx = randomInt(-2, 1);
+    this.dy = randomInt(-2, 1);
     this.radius = radius;
     this.opacity = 1;
     this.color = color;
-    this.maxRadius = 70;
+    this.maxRadius = 30;
     this.minRadius = radius;
   }
 
@@ -41,7 +45,7 @@ class Circle {
 
     ctx.beginPath();
     ctx.fillStyle = this.color;
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 3);
     ctx.fill();
   }
 
@@ -73,11 +77,11 @@ class Circle {
   }
 }
 
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 150; i++) {
   let circle = new Circle(
     randomInt(0, canvas.width),
     randomInt(0, canvas.height),
-    randomInt(5, 30),
+    randomInt(10, 5),
     colors[randomInt(0, colors.length)]
   );
   circleArray.push(circle);
