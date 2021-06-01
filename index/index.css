@@ -6,6 +6,8 @@ body {
   font-family: "Times New Roman";
   font-size: 20px;
   background-color: rgb(0, 0, 35);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .TheNexusWorkshop {
