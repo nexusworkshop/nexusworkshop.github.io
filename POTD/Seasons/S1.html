@@ -44,14 +44,86 @@
       <p>End: June 24, 2021</p>
       <h2>Leaderboard</h2>
       <ol>
-        <li>Gucciiccug#2102 - 3 pts</li>
+        <li>Gucciiccug#2102 - 12 pts</li>
+        <li>am#3215 - 9 pts</li>
+        <li>Vaishnavi#6303 - 3 pts</li>
       </ol>
       <!-- Problems and Solutions -->
       <h2>Problems and Solutions</h2>
+      <!-- May 31 -->
+      <div class="problem">
+        <div class="title">May 31, 2021 (HMMT February Team Round 2013/1)</div>
+        <p>
+          Let $a$ and $b$ be real numbers such that $ \frac {ab}{a^2 + b^2} =
+          \frac {1}{4} $. Find all possible values of $ \frac
+          {|a^2-b^2|}{a^2+b^2} $.
+        </p>
+      </div>
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p>
+          We have \[ \frac{\sqrt{(|a^2-b^2|)^2}}{a^2+b^2} =
+          \frac{\sqrt{(a+b)^2(a-b)^2}}{a^2+b^2}. \] From the relation $a^2+b^2 =
+          4ab$, we can deduce $(a+b)^2= 6a$ and $(a-b)^2= 2a$. Plugging in gives
+          \[\frac{\sqrt{12}ab}{4ab} = \boxed{\frac{\sqrt{3}}2},\] which works.
+          One example is $(a,b)=(1, 2\pm \sqrt{3})$. $$\tag*{$\blacksquare$}$$
+        </p>
+      </div>
+      <!-- May 29 and May 30 -->
+      <div class="problem">
+        <div class="title">May 28, 2021 and May 29, 2021 (AIME I 2016/12)</div>
+        <p>
+          Find the least positive integer $m$ such that $m^2 - m + 11$ is a
+          product of at least four not necessarily distinct primes.
+        </p>
+      </div>
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p>
+          Notice that $2 \mid m(m-1)$ so $2\nmid m^2-m+11$. Thus, \[p\mid
+          m^2-m+11 \implies p\mid 4m^2-4m+44=(2m-1)^2+43\] so $(2m-1)^2\equiv
+          -43\pmod{p}$. From here, we can plug in $p=3,5,7$, all of which fail
+          so all of the prime factors must be $11$ or larger.
+        </p>
+        <p>
+          Let $m^2 - m + 11 = pqrs$ for primes $p, q, r, s\ge11$. Since we are
+          looking for the least positive integer, let $(p,q,r,s)=(11,11,11,11)$.
+          Multiplying by $4$ and completing the square gives \[(2m-1)^2=4\cdot
+          11^4-43.\] However we get a contradiction: \[(2\cdot 11^2-1)^2=4\cdot
+          11^4-4\cdot 11^2+1 < 4\cdot 11^4-43<(2\cdot 11^2)^2,\] which means
+          that there lies a perfect square in between two consecutive perfect
+          squares. Thus, $$\begin{align*} m^2-m+11\ge 11^3\cdot 13 & \implies
+          (m-132)(m+131)\ge0 \\ & \implies m \ge 132 \end{align*}$$ Since $132^2
+          - 132 + 11 = 11^3 \cdot 13$, $m=\boxed{132}$.
+          $$\tag*{$\blacksquare$}$$
+        </p>
+      </div>
+      <!-- May 27 and May 28 -->
+      <div class="problem">
+        <div class="title">May 27, 2021 and May 28, 2021 (AMC 12A 2017/23)</div>
+        <p>
+          For certain real numbers $a$, $b$, and $c$, the polynomial\[g(x) = x^3
+          + ax^2 + x + 10\]has three distinct roots, and each root of $g(x)$ is
+          also a root of the polynomial\[f(x) = x^4 + x^3 + bx^2 + 100x +
+          c.\]What is $f(1)$?
+        </p>
+      </div>
+      <div class="toggle">Solution</div>
+      <div style="display: none">
+        <p>
+          Notice that we have \[f(x) = C(x-k)g(x)\] for some number $k$. Also,
+          we can see that $C=1$ because the coefficient of $x^4$ in $f(x)$ is
+          $1$. Thus, \[x^4+x^3+bx^2+100x+c=(x-k)(x^3+ax^2+x+10)\] Equating
+          coefficients gives \[a-k=1,1-ak=b,10-k=100,-10k=c\] which we can solve
+          to find $k=-90$ and $a=-89$. Our answer is
+          \[f(1)=(1+90)g(1)=91(1-89+1+10)=(91)(-77)=\boxed{-7007}.\]
+          $$\tag*{$\blacksquare$}$$
+        </p>
+      </div>
       <!-- May 25 and May 26 -->
       <div class="problem">
         <div class="title">
-          May 25, 2021 and May 26, 2021 (CMIMC Combinatorics #1)
+          May 25, 2021 and May 26, 2021 (CMIMC Combinatorics 2017/1)
         </div>
         <p>
           Robert colors each square in an empty 3 by 3 grid either red or green.
@@ -83,6 +155,7 @@
           </li>
         </ul>
         Adding up our cases gives $1+9+18+6=\boxed{34}$.
+        $$\tag*{$\blacksquare$}$$
       </div>
       <!-- May 24 -->
       <div class="problem">
@@ -95,8 +168,8 @@
       <div class="toggle">Solution</div>
       <div style="display: none">
         We have $$\begin{align*} (3\bigstar4)-(4\bigstar3) &=(4^3 - 3\cdot 4) -
-        (3^4 - 4\cdot 3) \\ &= (64 - 12) - (81 - 12) \\ &= \boxed{-17}
-        \end{align*}$$
+        (3^4 - 4\cdot 3) \\ &= (64 - 12) - (81 - 12) \\ &= \boxed{-17 }
+        \end{align*}$$ $$\tag*{$\blacksquare$}$$
       </div>
 
       <br /><br /><br /><br /><br /><br /><br />
