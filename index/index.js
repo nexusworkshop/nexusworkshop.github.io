@@ -30,12 +30,12 @@ class Circle {
   constructor(x, y, radius, color) {
     this.x = x;
     this.y = y;
-    this.dx = randomInt(-2, 1);
-    this.dy = randomInt(-2, 1);
+    this.dx = randomInt(-3, 3);
+    this.dy = randomInt(-3, 3);
     this.radius = radius;
     this.opacity = 1;
     this.color = color;
-    this.maxRadius = 30;
+    this.maxRadius = 40;
     this.minRadius = radius;
   }
 
@@ -45,16 +45,16 @@ class Circle {
 
     ctx.beginPath();
     ctx.fillStyle = this.color;
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 3);
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 20);
     ctx.fill();
   }
 
   grow() {
     if (
-      this.x + 30 >= mouse.x &&
-      this.x - 30 <= mouse.x &&
-      this.y - 30 <= mouse.y &&
-      this.y + 30 >= mouse.y &&
+      this.x + 70 >= mouse.x &&
+      this.x - 70 <= mouse.x &&
+      this.y - 70 <= mouse.y &&
+      this.y + 70 >= mouse.y &&
       this.radius <= this.maxRadius
     ) {
       this.radius++;
@@ -81,7 +81,7 @@ for (let i = 0; i < 150; i++) {
   let circle = new Circle(
     randomInt(0, canvas.width),
     randomInt(0, canvas.height),
-    randomInt(10, 5),
+    randomInt(9, 11),
     colors[randomInt(0, colors.length)]
   );
   circleArray.push(circle);
