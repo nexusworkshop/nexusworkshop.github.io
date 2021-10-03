@@ -1,4 +1,4 @@
-# The Nexus Workshop
+# Note: This Website is no longer being updated. Our new website can be visited [here](https://nexusworkshop.vercel.app/)
 This website offers free articles for talented math students from around the globe. The website can be found [here](https://nexusworkshop.github.io/).
 
 ## License
